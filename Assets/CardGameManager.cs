@@ -20,6 +20,8 @@ public class CardGameManager : MonoBehaviour
         }
         DrawCard();
         DrawCard();
+        DrawCard();
+        DrawCard();
         
     }
     public void DrawCard(){

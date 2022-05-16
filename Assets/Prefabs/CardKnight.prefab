@@ -1116,6 +1116,7 @@ GameObject:
   - component: {fileID: 3214461995329261184}
   - component: {fileID: 5219035354023032604}
   - component: {fileID: 1876294184587202673}
+  - component: {fileID: 6076342607110091282}
   m_Layer: 5
   m_Name: CardKnight
   m_TagString: Untagged
@@ -1178,6 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8592a4bfcae1fd5429bc21d08445ceec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myHandreference: {fileID: 0}
 --- !u!114 &5219035354023032604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,6 +1204,26 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6076342607110091282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7478895331470652929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 100
+  m_PreferredHeight: 100
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &7624077004710788369
 GameObject:
   m_ObjectHideFlags: 0

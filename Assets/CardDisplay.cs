@@ -27,8 +27,7 @@ public class CardDisplay : MonoBehaviour
 
     public void SetInfo(Card myCard){
       
-        Debug.Log(myCard.name);
-        nameText.text = " HI!";
+        
         this.card = myCard;
         nameText.text =  myCard.cardName;
         descriptionText.text = myCard.cardDescription;
