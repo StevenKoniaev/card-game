@@ -29,7 +29,7 @@ public class DropCard : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     if (eventData.pointerDrag != null){
  Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
       if (d!=null && d.placeHolderparent==this.transform){
-        d.myHandreference = d.myHandreference;
+        d.placeHolderparent = d.myHandreference;
       }
   }
     }

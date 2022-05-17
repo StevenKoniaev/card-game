@@ -967,12 +967,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 10d99a5f1f0c2d041bc7eddb4a25d5b9, type: 2}
-  nameText: {fileID: 2457775484348623066}
-  descriptionText: {fileID: 4939265755621419875}
-  art: {fileID: 6787663952513976801}
-  manaText: {fileID: 8440101648650081711}
-  attackText: {fileID: 8720457766376710440}
-  healthText: {fileID: 579941049242850071}
+  properties:
+  - text: {fileID: 0}
+    img: {fileID: 0}
+    e: {fileID: 11400000, guid: d5d5ce287f6d45b499acfc20cbd05e5b, type: 2}
+  - text: {fileID: 0}
+    img: {fileID: 0}
+    e: {fileID: 0}
 --- !u!114 &6023785827056610927
 MonoBehaviour:
   m_ObjectHideFlags: 0
