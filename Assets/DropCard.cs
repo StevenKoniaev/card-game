@@ -10,8 +10,14 @@ public class DropCard : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
   
   }
     public void OnPointerEnter(PointerEventData eventData){
-
-    }
+      if (eventData.pointerDrag != null){
+  Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+      if (d!=null){
+        d.placeHolderparent = this.transform;
+      }
+      }
+    
+    } 
   public void OnDrop(PointerEventData eventData){
      Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
       if (d!=null){
@@ -20,6 +26,12 @@ public class DropCard : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
   }
 
   public void OnPointerExit(PointerEventData eventData){
-      
+    if (eventData.pointerDrag != null){
+ Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+      if (d!=null && d.placeHolderparent==this.transform){
+        d.myHandreference = d.myHandreference;
+      }
   }
+    }
+     
 }
