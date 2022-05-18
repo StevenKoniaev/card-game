@@ -6,12 +6,15 @@ public class CardGameManager : MonoBehaviour
 {
    
     public List<Card> deck = new List<Card>();
-    public Transform[] cardSlots;
-    public bool[] avaliableCardSlots;
+    public int[] rowOne = new int[3];
+    public int[] rowTwo = new int[3];
+    public int[] rowThree = new int[3];
+    Transform[] cardSlots = new Transform[10];
+    bool[] avaliableCardSlots = new bool[10];
     public GameObject playerArea;
     public GameObject cardPrefab;
 
-    public void Start(){
+    public void OpeningCardSlots(){
         for(int i=0; i < avaliableCardSlots.Length; i++){
             avaliableCardSlots[i] = true;
         }
@@ -19,14 +22,14 @@ public class CardGameManager : MonoBehaviour
         for (int i = 0; i < deck.Count; i++){
             Instantiate(deck[i]);
         }
-        DrawCard();
-        DrawCard();
+
+      //  DrawCard();
         
     }
     public void DrawCard(){
         
         if (deck.Count >= 1){
-
+            Debug.Log("DRAW!");
             Card randomCard = deck[Random.Range(0, deck.Count)];
         
             for (int i = 0; i < avaliableCardSlots.Length; i++){

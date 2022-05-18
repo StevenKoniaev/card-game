@@ -13,4 +13,24 @@ MonoBehaviour:
   m_Name: Demon
   m_EditorClassIdentifier: 
   cType: {fileID: 11400000, guid: 77179913b3302bd469d83b5fd41adc89, type: 2}
-  properties: []
+  properties:
+  - stringVal: 
+    intVal: 3
+    sprite: {fileID: 0}
+    e: {fileID: 11400000, guid: 6300f807f42c85f44a73fc71eb2fc5b5, type: 2}
+  - stringVal: 
+    intVal: 2
+    sprite: {fileID: 0}
+    e: {fileID: 11400000, guid: 6939204ea739c5d42b498a00dd533667, type: 2}
+  - stringVal: 
+    intVal: 1
+    sprite: {fileID: 0}
+    e: {fileID: 11400000, guid: b8bb423113a63e0478c1ea1d2631231a, type: 2}
+  - stringVal: DEMON
+    intVal: 1
+    sprite: {fileID: 0}
+    e: {fileID: 11400000, guid: d5d5ce287f6d45b499acfc20cbd05e5b, type: 2}
+  - stringVal: DEMON
+    intVal: 1
+    sprite: {fileID: 0}
+    e: {fileID: 11400000, guid: d5d5ce287f6d45b499acfc20cbd05e5b, type: 2}

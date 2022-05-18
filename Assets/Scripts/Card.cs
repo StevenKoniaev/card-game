@@ -6,6 +6,9 @@ using UnityEngine;
 public class Card : ScriptableObject
 {
 public CardType cType;
+
+
+
 public List<CardProperties> properties = new List<CardProperties>();
     
 }
