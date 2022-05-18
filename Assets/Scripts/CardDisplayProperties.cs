@@ -7,7 +7,7 @@ using TMPro;
 [System.Serializable]
 public class CardDisplayProperties 
 {
-    public TextMeshPro text;
+    public TextMeshProUGUI textref;
     public Image img;
     public Element e;
 }

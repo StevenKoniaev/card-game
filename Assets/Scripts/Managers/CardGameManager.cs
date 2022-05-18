@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CardGameManager : MonoBehaviour
 {
+   
     public List<Card> deck = new List<Card>();
     public Transform[] cardSlots;
     public bool[] avaliableCardSlots;
@@ -18,8 +19,6 @@ public class CardGameManager : MonoBehaviour
         for (int i = 0; i < deck.Count; i++){
             Instantiate(deck[i]);
         }
-        DrawCard();
-        DrawCard();
         DrawCard();
         DrawCard();
         
@@ -45,6 +44,8 @@ public class CardGameManager : MonoBehaviour
         }
     }
 
+
+    
     public void EndCombat(){
 
     }

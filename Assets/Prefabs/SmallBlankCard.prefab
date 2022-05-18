@@ -967,12 +967,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 10d99a5f1f0c2d041bc7eddb4a25d5b9, type: 2}
-  nameText: {fileID: 2457775484348623066}
-  descriptionText: {fileID: 4939265755621419875}
-  art: {fileID: 6787663952513976801}
-  manaText: {fileID: 8440101648650081711}
-  attackText: {fileID: 8720457766376710440}
-  healthText: {fileID: 579941049242850071}
+  properties:
+  - textref: {fileID: 4939265755621419875}
+    img: {fileID: 0}
+    e: {fileID: 11400000, guid: 4149bd8ec235d58458ca8820e5144142, type: 2}
+  - textref: {fileID: 8720457766376710440}
+    img: {fileID: 0}
+    e: {fileID: 11400000, guid: 6939204ea739c5d42b498a00dd533667, type: 2}
+  - textref: {fileID: 8440101648650081711}
+    img: {fileID: 0}
+    e: {fileID: 11400000, guid: 6300f807f42c85f44a73fc71eb2fc5b5, type: 2}
+  - textref: {fileID: 579941049242850071}
+    img: {fileID: 0}
+    e: {fileID: 11400000, guid: b8bb423113a63e0478c1ea1d2631231a, type: 2}
+  - textref: {fileID: 0}
+    img: {fileID: 6787663952513976801}
+    e: {fileID: 11400000, guid: 8b7bb977e05f01749b1698bad6faff73, type: 2}
+  - textref: {fileID: 2457775484348623066}
+    img: {fileID: 0}
+    e: {fileID: 11400000, guid: d5d5ce287f6d45b499acfc20cbd05e5b, type: 2}
+  - textref: {fileID: 0}
+    img: {fileID: 0}
+    e: {fileID: 11400000, guid: 5b14c59308e2780489f2f92b8ca2d705, type: 2}
+  healthHolder: {fileID: 287893395053099380}
+  powerHolder: {fileID: 8287070315285999141}
 --- !u!114 &6023785827056610927
 MonoBehaviour:
   m_ObjectHideFlags: 0

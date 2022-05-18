@@ -8,7 +8,8 @@ public class CardDisplay : MonoBehaviour
 
     public Card card = null;
    public CardDisplayProperties[] properties;
-
+  public GameObject healthHolder;
+  public GameObject powerHolder;
     public void SetInfo(Card myCard){
 
       if (myCard == null){
@@ -16,6 +17,8 @@ public class CardDisplay : MonoBehaviour
       }
         
         this.card = myCard;
+
+        myCard.cType.OnSetType(this);
 
         for (int i =0; i < myCard.properties.Count; i++){
           CardProperties cp = myCard.properties[i];
@@ -25,9 +28,9 @@ public class CardDisplay : MonoBehaviour
             continue;
           }
           if (cp.e is ElementInt){
-            p.text.text = cp.intVal.ToString();
+            p.textref.text = cp.intVal.ToString();
           }else if (cp.e is ElementText){
-            p.text.text = cp.stringVal;
+            p.textref.text = cp.stringVal;
           }
           else if (cp.e is ElementImage){
             p.img.sprite = cp.sprite;

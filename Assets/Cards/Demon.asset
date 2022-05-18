@@ -12,9 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20389064d11407f4ab58f20762e7c020, type: 3}
   m_Name: Demon
   m_EditorClassIdentifier: 
-  cardName: Demon
-  cost: 3
-  power: 2
-  health: 1
-  cardDescription: I am a demon, that means I am EVIL!
-  artwork: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  cType: {fileID: 11400000, guid: 77179913b3302bd469d83b5fd41adc89, type: 2}
+  properties: []

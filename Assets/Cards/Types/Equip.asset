@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20389064d11407f4ab58f20762e7c020, type: 3}
-  m_Name: Mage Man
+  m_Script: {fileID: 11500000, guid: 864ac94fc8ab2b34290805faae443be7, type: 3}
+  m_Name: Equip
   m_EditorClassIdentifier: 
-  cType: {fileID: 11400000, guid: 77179913b3302bd469d83b5fd41adc89, type: 2}
-  properties: []
+  typeName: Equip

@@ -10,31 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20389064d11407f4ab58f20762e7c020, type: 3}
-  m_Name: Blank
+  m_Name: Greatsword
   m_EditorClassIdentifier: 
-  cType: {fileID: 11400000, guid: 77179913b3302bd469d83b5fd41adc89, type: 2}
+  cType: {fileID: 11400000, guid: 32cb9b14f31e9244c9aacc74c016f152, type: 2}
   properties:
-  - stringVal: 
-    intVal: 5
-    sprite: {fileID: 0}
-    e: {fileID: 11400000, guid: 6939204ea739c5d42b498a00dd533667, type: 2}
-  - stringVal: 
-    intVal: 2
-    sprite: {fileID: 0}
-    e: {fileID: 11400000, guid: 6300f807f42c85f44a73fc71eb2fc5b5, type: 2}
-  - stringVal: I am a knight!
+  - stringVal: GREAT WEAPON
     intVal: 0
     sprite: {fileID: 0}
     e: {fileID: 11400000, guid: 4149bd8ec235d58458ca8820e5144142, type: 2}
   - stringVal: 
-    intVal: 6
+    intVal: 2
     sprite: {fileID: 0}
-    e: {fileID: 11400000, guid: b8bb423113a63e0478c1ea1d2631231a, type: 2}
+    e: {fileID: 11400000, guid: 6300f807f42c85f44a73fc71eb2fc5b5, type: 2}
   - stringVal: 
     intVal: 0
-    sprite: {fileID: 21300000, guid: bda9bc6ccc6963e4abaf55ab900f03fc, type: 3}
+    sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     e: {fileID: 11400000, guid: 8b7bb977e05f01749b1698bad6faff73, type: 2}
-  - stringVal: KNIGHT
+  - stringVal: Greatsword
     intVal: 0
     sprite: {fileID: 0}
     e: {fileID: 11400000, guid: d5d5ce287f6d45b499acfc20cbd05e5b, type: 2}
