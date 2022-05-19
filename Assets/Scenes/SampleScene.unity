@@ -669,6 +669,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336475122}
     m_Modifications:
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: column
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1976925577}
     - target: {fileID: 7958516545930661549, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -848,6 +856,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1247836363}
     m_Modifications:
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1976925577}
     - target: {fileID: 7958516545930661549, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1181,6 +1193,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 221301736}
     m_Modifications:
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1976925577}
     - target: {fileID: 7958516545930661549, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1283,6 +1299,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1247836363}
     m_Modifications:
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1976925577}
     - target: {fileID: 7958516545930661549, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1385,6 +1405,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336475122}
     m_Modifications:
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1976925577}
     - target: {fileID: 7958516545930661549, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1487,6 +1511,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1247836363}
     m_Modifications:
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1976925577}
     - target: {fileID: 7958516545930661549, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1773,7 +1801,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1668348630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1976925580}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: EndTurnButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1668348630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1895,19 +1935,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1673791098}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1976925580}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: EndTurnButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1673791098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,6 +2058,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 221301736}
     m_Modifications:
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1976925577}
     - target: {fileID: 7958516545930661549, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2676,9 +2708,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: acef9bcfdc0b0f3449f3cf0e23481341, type: 2}
   - {fileID: 11400000, guid: acef9bcfdc0b0f3449f3cf0e23481341, type: 2}
   - {fileID: 11400000, guid: acef9bcfdc0b0f3449f3cf0e23481341, type: 2}
-  rowOne: 000000000000000000000000
-  rowTwo: 000000000000000000000000
-  rowThree: 000000000000000000000000
   playerArea: {fileID: 645096317}
   cardPrefab: {fileID: 5641730695170133979, guid: a5d35c9e95e23f245abe7753326df823, type: 3}
 --- !u!4 &1976925579
@@ -2711,6 +2740,7 @@ MonoBehaviour:
   manatotal: 0
   mana: 0
   state: 0
+  enemy: []
 --- !u!114 &1976925581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2869,6 +2899,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 221301736}
     m_Modifications:
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1976925577}
     - target: {fileID: 7958516545930661549, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3093,6 +3127,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336475122}
     m_Modifications:
+    - target: {fileID: 1877627231994471317, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1976925577}
     - target: {fileID: 7958516545930661549, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3200,6 +3238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338e1d443e3b83b4bbf547be0a7c6bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  row: 0
+  column: 0
 --- !u!114 &1976529076538773205
 MonoBehaviour:
   m_ObjectHideFlags: 0

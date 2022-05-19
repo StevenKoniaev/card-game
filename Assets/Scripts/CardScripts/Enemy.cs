@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Enemy : ScriptableObject
+public class Enemy : Card
 {
     
-public Sprite artwork;
-public new string name;
-public int health;
-
-public string description;
-
 public bool TakeDamage(int dmg){
     health -= dmg;
 

@@ -8,7 +8,6 @@ public class CardDisplay : MonoBehaviour
 
     public Card card = null;
       public GameObject healthHolder;
-      public GameObject powerHolder;
 
       //Properties to display
       public TextMeshProUGUI nameText;
@@ -28,13 +27,7 @@ public class CardDisplay : MonoBehaviour
         descriptionText.text = myCard.description;
         artwork.sprite = myCard.artwork;
         cost.text = myCard.cost.ToString();
-        attack.text = myCard.attack.ToString();
         health.text = myCard.health.ToString();
-
-        
-
-       
-      
     }
 
 

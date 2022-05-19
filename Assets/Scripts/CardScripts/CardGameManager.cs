@@ -7,7 +7,7 @@ public class CardGameManager : MonoBehaviour
    
     public List<Card> deck = new List<Card>();
     
-    public Card[,] board = new Card[3,3];
+    public Card[,] board = new Card[4,4];
     Transform[] cardSlots = new Transform[10];
     bool[] avaliableCardSlots = new bool[10];
     public GameObject playerArea;

@@ -80,7 +80,9 @@ public class BattleSystem : MonoBehaviour
             for (int j = 0 ; j < 3; j++){
                 if (cmang.board[i,j] != null){
                     for (int k = 0; k < cmang.board[i,j].cActions.Length; k++ ){
-                        cmang.board[i,j].cActions[k].CardAction();
+                        Debug.Log("HERE!");
+                        cmang.board[i,j].cActions[k].CardAction(cmang.board, i, j);
+                        
                     }
                 }
             }

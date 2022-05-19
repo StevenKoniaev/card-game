@@ -6,8 +6,10 @@ using UnityEngine.EventSystems;
 public class DropCard : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
 
+
   public void Start(){
-  
+ 
+    
   }
     public void OnPointerEnter(PointerEventData eventData){
       if (eventData.pointerDrag != null){

@@ -16,7 +16,6 @@ public string description;
 public Sprite artwork;
 public int cost;
 
-public int attack;
 public int health;
 
 public Action[] cActions;
