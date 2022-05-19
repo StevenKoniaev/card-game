@@ -19,5 +19,8 @@ public int cost;
 public int attack;
 public int health;
 
+public Action[] cActions;
+
+
     
 }

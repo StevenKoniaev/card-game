@@ -12,4 +12,14 @@ public int health;
 
 public string description;
 
+public bool TakeDamage(int dmg){
+    health -= dmg;
+
+    if (health <= 0){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 }

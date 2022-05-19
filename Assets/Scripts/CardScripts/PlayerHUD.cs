@@ -15,22 +15,20 @@ public class PlayerHUD : MonoBehaviour
         
     }
 
-    public void SetPlayerHealth(){
+    public void SetPlayerHealth(int hp){
+        healthText.text = hp.ToString();
     }
 
     public void SetPlayerMana(int mana){
-        
+        manaText.text = mana.ToString();
     }
 
-    public void HUDTextPlayerTurn(){
-        turnTextText.text = "Your turn";
+    public void HUDTextUpdate(string text){
+        turnTextText.text = text;
         turnTextObject.SetActive(true);
     }
 
-    public void HUDTextEnemyTurn(){
-        turnTextText.text = "Enemy turn";
-        turnTextObject.SetActive(true);
-    }
+  
 
     public void StopTextTurnText(){
         turnTextObject.SetActive(false);

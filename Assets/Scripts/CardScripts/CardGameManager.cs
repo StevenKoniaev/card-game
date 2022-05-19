@@ -6,9 +6,8 @@ public class CardGameManager : MonoBehaviour
 {
    
     public List<Card> deck = new List<Card>();
-    public int[] rowOne = new int[3];
-    public int[] rowTwo = new int[3];
-    public int[] rowThree = new int[3];
+    
+    public Card[,] board = new Card[3,3];
     Transform[] cardSlots = new Transform[10];
     bool[] avaliableCardSlots = new bool[10];
     public GameObject playerArea;
