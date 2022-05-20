@@ -21,7 +21,7 @@ public class EnemyDisplay : MonoBehaviour
       }
         this.enemy = myEnemy;
         nameText.text = myEnemy.name;
-        descriptionText.text = myEnemy.description;
+        //descriptionText.text = myEnemy.description;
         artwork.sprite = myEnemy.artwork;
 
         health.text = myEnemy.health.ToString();

@@ -6,12 +6,15 @@ using UnityEngine;
 public class AttackAction : Action
 {
    public int damage = 3;
-    public void CardAction(Card[,] board, int x, int y){
+
+
+   
+    public override void CardAction(Card[,] board, int x, int y){
         //Deal damage to a unit based on the direction
         //TODO switch the directon be an enum or something ~ 
         if (board[x,y+1] != null){
             board[x,y+1].health -= damage;
-            Debug.Log(board[x,y+1].health);
+         //   board[x,y+1].myDisplay.CardUpdate(board[x, y+1]);
         }
         
 

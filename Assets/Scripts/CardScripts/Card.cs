@@ -12,11 +12,12 @@ public class Card : ScriptableObject
 
 public CardType cType;
 public new string name;
-public string description;
+
 public Sprite artwork;
 public int cost;
-
+//public CardDisplay myDisplay = null;
 public int health;
+public int healthMax;
 
 public Action[] cActions;
 

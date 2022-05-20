@@ -24,13 +24,19 @@ public class CardDisplay : MonoBehaviour
       }
         this.card = myCard;
         nameText.text = myCard.name;
-        descriptionText.text = myCard.description;
         artwork.sprite = myCard.artwork;
         cost.text = myCard.cost.ToString();
+        myCard.health = myCard.healthMax;
         health.text = myCard.health.ToString();
+        //myCard.myDisplay = this;
+        for (int i =0; i < myCard.cActions.Length; i++){
+          descriptionText.text += myCard.cActions[i].descriptionText + "\n";
+        }
     }
 
-
+    public void CardUpdate(Card myCard){
+     //myCard.myDisplay.health.text = myCard.health.ToString();
+    }
  
 
     public void Die(){

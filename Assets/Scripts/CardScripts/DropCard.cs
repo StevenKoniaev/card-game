@@ -7,23 +7,27 @@ public class DropCard : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 {
 
 
-  public void Start(){
- 
-    
-  }
+public CardGameManager cmang;
+public int x;
+public int y;
+
     public void OnPointerEnter(PointerEventData eventData){
       if (eventData.pointerDrag != null){
   Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
       if (d!=null){
         d.placeHolderparent = this.transform;
+        
       }
       }
     
     } 
   public void OnDrop(PointerEventData eventData){
      Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+     Card myCard = eventData.pointerDrag.GetComponent<CardDisplay>().card;
       if (d!=null){
         d.myHandreference = this.transform;
+        cmang.board[x,y] = myCard;
+      
       }
   }
 

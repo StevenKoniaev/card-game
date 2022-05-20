@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Action : ScriptableObject
+public abstract class Action : ScriptableObject
 {
-  public void CardAction(Card[,] board, int x, int y){
-
-   }
+  public string descriptionText;
+  public abstract void CardAction(Card[,] board, int x, int y);
 }

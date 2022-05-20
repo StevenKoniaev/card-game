@@ -66,7 +66,7 @@ public class BattleSystem : MonoBehaviour
     }
 
 
-
+//Begins the next phase!
     public void EndTurnButton(){
         if (state != BattleState.PLAYERTURN){
             return;
@@ -80,9 +80,8 @@ public class BattleSystem : MonoBehaviour
             for (int j = 0 ; j < 3; j++){
                 if (cmang.board[i,j] != null){
                     for (int k = 0; k < cmang.board[i,j].cActions.Length; k++ ){
-                        Debug.Log("HERE!");
+                        //Go through array of possible actions and use them
                         cmang.board[i,j].cActions[k].CardAction(cmang.board, i, j);
-                        
                     }
                 }
             }

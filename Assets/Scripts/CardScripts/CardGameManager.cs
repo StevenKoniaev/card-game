@@ -6,7 +6,7 @@ public class CardGameManager : MonoBehaviour
 {
    
     public List<Card> deck = new List<Card>();
-    
+    //For now I added a referenace back to cardisplay - not sure if this is the best way of handling it but i'm gonna keep it- 
     public Card[,] board = new Card[4,4];
     Transform[] cardSlots = new Transform[10];
     bool[] avaliableCardSlots = new bool[10];
