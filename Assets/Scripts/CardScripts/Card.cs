@@ -15,7 +15,7 @@ public new string name;
 
 public Sprite artwork;
 public int cost;
-//public CardDisplay myDisplay = null;
+public CardDisplay myDisplay = null;
 public int health;
 public int healthMax;
 

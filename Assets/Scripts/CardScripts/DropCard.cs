@@ -23,11 +23,13 @@ public int y;
     } 
   public void OnDrop(PointerEventData eventData){
      Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
-     Card myCard = eventData.pointerDrag.GetComponent<CardDisplay>().card;
+     
       if (d!=null){
         d.myHandreference = this.transform;
+        if (x != -1 && y != -1){
+        Card myCard = eventData.pointerDrag.GetComponent<CardDisplay>().card;
         cmang.board[x,y] = myCard;
-      
+      }
       }
   }
 

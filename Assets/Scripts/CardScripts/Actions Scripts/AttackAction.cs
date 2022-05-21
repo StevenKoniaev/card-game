@@ -14,7 +14,7 @@ public class AttackAction : Action
         //TODO switch the directon be an enum or something ~ 
         if (board[x,y+1] != null){
             board[x,y+1].health -= damage;
-         //   board[x,y+1].myDisplay.CardUpdate(board[x, y+1]);
+            board[x,y+1].myDisplay.CardUpdate(board[x, y+1]);
         }
         
 
