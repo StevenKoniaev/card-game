@@ -1,4 +1,4 @@
-using System.Collections;
+  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -27,6 +27,7 @@ public int y;
       if (d!=null){
         d.myHandreference = this.transform;
         if (x != -1 && y != -1){
+         eventData.pointerDrag.transform.localScale = new Vector3(1,1,1);
         Card myCard = eventData.pointerDrag.GetComponent<CardDisplay>().card;
         cmang.board[x,y] = myCard;
       }
