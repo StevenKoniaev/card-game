@@ -21,6 +21,14 @@ public int healthMax;
 
 public Action[] cActions;
 
+public bool TakeDamage(int dmg){
+    health -= dmg;
 
+    if (health <= 0){
+        return true;
+    } else {
+        return false;
+    }
+}
     
 }

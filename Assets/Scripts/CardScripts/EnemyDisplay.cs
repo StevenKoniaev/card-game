@@ -8,7 +8,7 @@ public class EnemyDisplay : MonoBehaviour
      public Enemy enemy = null;
 
       //Properties to display
-      public TextMeshProUGUI nameText;
+      
       public TextMeshProUGUI descriptionText;
       public Image artwork;
       public TextMeshProUGUI attack;
@@ -20,10 +20,10 @@ public class EnemyDisplay : MonoBehaviour
         return;
       }
         this.enemy = myEnemy;
-        nameText.text = myEnemy.name;
-        //descriptionText.text = myEnemy.description;
+        //nameText.text = myEnemy.name;
+        descriptionText.text = myEnemy.description;
         artwork.sprite = myEnemy.artwork;
-
+        this.GetComponentInChildren<Animator>().runtimeAnimatorController = myEnemy.animatorcontroller;
         health.text = myEnemy.health.ToString();
 
         

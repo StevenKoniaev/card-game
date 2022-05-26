@@ -5,15 +5,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Enemy : Card
 {
-    
-public bool TakeDamage(int dmg){
-    health -= dmg;
+public RuntimeAnimatorController animatorcontroller;
 
-    if (health <= 0){
-        return true;
-    } else {
-        return false;
-    }
-}
+public string description;
 
 }

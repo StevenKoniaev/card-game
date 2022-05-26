@@ -15,21 +15,27 @@ public class BattleSystem : MonoBehaviour
     public BattleState state;
     CardGameManager cmang; 
     PlayerHUD playerHud;
-
+    public GameObject enemyPrefab;
     public Enemy[] enemy;
+    public Transform enemyArea;
     // Start is called before the first frame update
     void Start()
     {
         
         cmang = GetComponent<CardGameManager>();
         playerHud = GetComponent<PlayerHUD>();
-        SetupBattle(null);
+        SetupBattle(enemy);
         
     } 
 
     public void SetupBattle(Enemy[] enemies){
         if (enemy == null){
             enemy = enemies;
+        }
+        for (int i = 0 ; i < enemies.Length; i++){
+            GameObject enemyObject = Instantiate(enemyPrefab, new Vector3(0,0,0), Quaternion.identity);
+            enemyObject.transform.SetParent(enemyArea.transform, false);
+            enemyObject.GetComponent<EnemyDisplay>().SetEnemyInfo(enemy[i]);
         }
         mana = 0;
         manatotal = 0;

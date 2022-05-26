@@ -7,7 +7,8 @@ public class CardGameManager : MonoBehaviour
    
     public List<Card> deck = new List<Card>();
     //For now I added a referenace back to cardisplay - not sure if this is the best way of handling it but i'm gonna keep it- 
-    public Card[,] board = new Card[4,4];
+    //TODO consider swapping appraoch on getting back to carddisplay reference - have deck store game objects instead of cards?
+    public Card[,] board = new Card[3,4];
     Transform[] cardSlots = new Transform[10];
     bool[] avaliableCardSlots = new bool[10];
     public GameObject playerArea;
@@ -27,7 +28,7 @@ public class CardGameManager : MonoBehaviour
         if (deck.Count >= 1){
             //Picks a random card
             Card randomCard = deck[Random.Range(0, deck.Count)];
-        //Is there space in hand?
+            //Is there space in hand?
             for (int i = 0; i < avaliableCardSlots.Length; i++){
                 //Has this slot been taken?
                 if (avaliableCardSlots[i] == true){
