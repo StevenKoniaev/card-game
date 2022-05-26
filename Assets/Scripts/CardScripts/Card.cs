@@ -21,13 +21,14 @@ public int healthMax;
 
 public Action[] cActions;
 
-public bool TakeDamage(int dmg){
+public virtual void TakeDamage(int dmg){
     health -= dmg;
-
-    if (health <= 0){
-        return true;
+    Debug.Log(this.health);
+    myDisplay.CardUpdate(this);
+    if (health > 0){
+        
     } else {
-        return false;
+        //Destroy(myDisplay.transform.parent.gameObject);
     }
 }
     

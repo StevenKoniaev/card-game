@@ -9,9 +9,7 @@ START, PLAYERTURN, ENEMYTURN, WON, LOST, ENEEMYBATTLE
 //This boi is the main script who manages everything in a fight - Be WARNED ~! 
 public class BattleSystem : MonoBehaviour
 {
-    public int manatotal;
-    public int mana;
-    private int health; 
+    
     public BattleState state;
     CardGameManager cmang; 
     PlayerHUD playerHud;
@@ -25,7 +23,7 @@ public class BattleSystem : MonoBehaviour
         cmang = GetComponent<CardGameManager>();
         playerHud = GetComponent<PlayerHUD>();
         SetupBattle(enemy);
-        
+        int manaStart = cmang.manatotal;
     } 
 
     public void SetupBattle(Enemy[] enemies){
@@ -37,18 +35,22 @@ public class BattleSystem : MonoBehaviour
             enemyObject.transform.SetParent(enemyArea.transform, false);
             enemyObject.GetComponent<EnemyDisplay>().SetEnemyInfo(enemy[i]);
         }
-        mana = 0;
-        manatotal = 0;
+        //Temporary 
+        cmang.board[0, 3] = enemy[0];
+        cmang.board[1, 3] = enemy[0];
+        cmang.board[2, 3] = enemy[0];
+
+        cmang.mana = cmang.manaStart;
+        cmang.manatotal = cmang.manaStart;
         StartCoroutine(PlayerTurn());
     }
 
     public IEnumerator PlayerTurn(){
         state = BattleState.START;
-        manatotal += 1;
-        mana = manatotal;
+        cmang.manatotal += 1;
+        cmang.mana = cmang.manatotal;
 
         //Draw Opening Hand
-        cmang.OpeningCardSlots();
         cmang.DrawCard();
         cmang.DrawCard();
         cmang.DrawCard();
@@ -66,7 +68,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     public void PlayerHUDChanges(string text){
-        playerHud.SetPlayerMana(mana);
+        playerHud.SetPlayerMana(cmang.mana);
         playerHud.HUDTextUpdate(text);
         
     }
@@ -119,12 +121,22 @@ public class BattleSystem : MonoBehaviour
     }
 
     public IEnumerator EnemyTurn(){
+        //Enemy attack code 
+            Action chosenAction = enemy[0].cActions[Random.Range(0, enemy[0].cActions.Length)];
+      Debug.Log(chosenAction);
+        
+        chosenAction.CardAction(cmang.board, 0, 3);
+        chosenAction.CardAction(cmang.board, 1, 3);
+    chosenAction.CardAction(cmang.board, 2, 3);
+
         Debug.Log("Enemy ATTACK!");
         yield return new WaitForSeconds(1f);
 
-        bool isDead = false;
-        //Take damage
 
+
+
+        bool isDead = false;        
+        //Take damage
         if (isDead){
             state = BattleState.LOST;
             EndBattle();

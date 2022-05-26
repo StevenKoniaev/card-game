@@ -20,6 +20,6 @@ MonoBehaviour:
   health: 5
   healthMax: 5
   cActions:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4a15da7478d12e24886aa9839d6cc141, type: 2}
   animatorcontroller: {fileID: 9100000, guid: 5996c4eb058a4444288ac730752f78a0, type: 2}
   description: 'Surrender your soul : > '

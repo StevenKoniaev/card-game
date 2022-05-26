@@ -2227,7 +2227,7 @@ GameObject:
   - component: {fileID: 1976925581}
   m_Layer: 0
   m_Name: CardGameManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2249,6 +2249,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6c1da5ce7486aac48971059216769a63, type: 2}
   playerArea: {fileID: 645096317}
   cardPrefab: {fileID: 5641730695170133979, guid: a5d35c9e95e23f245abe7753326df823, type: 3}
+  manatotal: 0
+  mana: 0
+  manaStart: 20
 --- !u!4 &1976925579
 Transform:
   m_ObjectHideFlags: 0
@@ -2276,8 +2279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ca72fc621225c4186dae6944f076ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manatotal: 0
-  mana: 0
   state: 0
   enemyPrefab: {fileID: 3301445986707486265, guid: adf384850c8f40046b954ed8ea272bd6, type: 3}
   enemy:
@@ -2657,6 +2658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cmang: {fileID: 1976925578}
+  playerHud: {fileID: 0}
   x: -1
   y: -1
 --- !u!114 &1976529076538773205
@@ -2762,7 +2764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8393857193549851956, guid: 7c30ecf6deea7224b8c8d166412cd1b0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -17
+      value: -16.999878
       objectReference: {fileID: 0}
     - target: {fileID: 8393857193549851956, guid: 7c30ecf6deea7224b8c8d166412cd1b0, type: 3}
       propertyPath: m_AnchoredPosition.y

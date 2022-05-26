@@ -15,16 +15,16 @@ public class AttackAction : Action
         //TODO switch the directon be an enum or something ~ 
         //Doing now! Is there a better way to do this? Think about it.\
         //Switch statment + enum is so clean
-
+        
         switch (direction){
             //Check direction of attack action!
-
+            
             case Direction.UP:
             {
                 if (x+1 < board.GetLength(0)){
                     if (board[x+1, y] != null){
                         board[x+1, y].TakeDamage(damage);
-                        board[x+1,y].myDisplay.CardUpdate(board[x+1,y]);
+                        Debug.Log(board[x+1,y].health);
                     }
                 }
                 break;
@@ -35,7 +35,7 @@ public class AttackAction : Action
                 if (x-1 >= 0){
                     if (board[x-1, y] != null){
                         board[x-1, y].TakeDamage(damage);
-                        board[x-1,y].myDisplay.CardUpdate(board[x-1,y]);
+                      
                     }
                 }
                 break;
@@ -44,7 +44,7 @@ public class AttackAction : Action
                 if (y-1 >= 0){
                     if (board[x, y-1] != null){
                         board[x, y-1].TakeDamage(damage);
-                        board[x,y-1].myDisplay.CardUpdate(board[x,y-1]);
+                       
                     }
                 }
                 break;
@@ -54,7 +54,7 @@ public class AttackAction : Action
                   if (y+1 < board.GetLength(1)){
                     if (board[x, y+1] != null){
                         board[x, y+1].TakeDamage(damage);
-                        board[x,y+1].myDisplay.CardUpdate(board[x,y+1]);
+                       
                     }
                 }
                 break;

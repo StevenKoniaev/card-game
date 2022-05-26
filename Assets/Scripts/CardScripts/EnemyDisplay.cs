@@ -23,12 +23,15 @@ public class EnemyDisplay : MonoBehaviour
         //nameText.text = myEnemy.name;
         descriptionText.text = myEnemy.description;
         artwork.sprite = myEnemy.artwork;
+        myEnemy.enemyDisplay = this;
         this.GetComponentInChildren<Animator>().runtimeAnimatorController = myEnemy.animatorcontroller;
+        myEnemy.health = myEnemy.healthMax;
         health.text = myEnemy.health.ToString();
-
-        
-
-       
-      
     }
+
+    public void CardUpdate(Card myCard){
+     this.health.text = myCard.health.ToString();
+    }
+
+    
 }

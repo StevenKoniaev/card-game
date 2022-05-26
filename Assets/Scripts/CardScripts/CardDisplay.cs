@@ -13,9 +13,8 @@ public class CardDisplay : MonoBehaviour
       public TextMeshProUGUI nameText;
       public TextMeshProUGUI descriptionText;
       public Image artwork;
-      public TextMeshProUGUI cost;
-      public TextMeshProUGUI attack;
-      public TextMeshProUGUI health;
+      public TextMeshProUGUI costText;
+      public TextMeshProUGUI healthText;
 
     public void SetInfo(Card myCard){
 
@@ -25,9 +24,9 @@ public class CardDisplay : MonoBehaviour
         this.card = myCard;
         nameText.text = myCard.name;
         artwork.sprite = myCard.artwork;
-        cost.text = myCard.cost.ToString();
+        costText.text = myCard.cost.ToString();
         myCard.health = myCard.healthMax;
-        health.text = myCard.health.ToString();
+        healthText.text = myCard.health.ToString();
         myCard.myDisplay = this;
         for (int i =0; i < myCard.cActions.Length; i++){
           descriptionText.text += myCard.cActions[i].descriptionText + "\n";
@@ -35,7 +34,7 @@ public class CardDisplay : MonoBehaviour
     }
 
     public void CardUpdate(Card myCard){
-     myCard.myDisplay.health.text = myCard.health.ToString();
+     this.healthText.text = myCard.health.ToString();
     }
  
 

@@ -596,13 +596,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 10d99a5f1f0c2d041bc7eddb4a25d5b9, type: 2}
-  healthHolder: {fileID: 0}
+  healthHolder: {fileID: 7219171715744385480}
   nameText: {fileID: 2457775484348623066}
   descriptionText: {fileID: 4939265755621419875}
   artwork: {fileID: 6787663952513976801}
-  cost: {fileID: 8440101648650081711}
-  attack: {fileID: 0}
-  health: {fileID: 579941049242850071}
+  costText: {fileID: 8440101648650081711}
+  healthText: {fileID: 579941049242850071}
 --- !u!114 &6023785827056610927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,8 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8592a4bfcae1fd5429bc21d08445ceec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myHandreference: {fileID: 0}
-  placeHolderparent: {fileID: 0}
+  parentToReturnTo: {fileID: 0}
 --- !u!225 &191520759502586307
 CanvasGroup:
   m_ObjectHideFlags: 0
