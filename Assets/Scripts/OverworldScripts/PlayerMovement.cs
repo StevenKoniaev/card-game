@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
      Rigidbody2D rb;
      public Animator animator;
      SpriteRenderer sr;
-    
+    BattleSystem battleSystem;
     Vector2 movement;
     // Start is called before the first frame update
     void Start()
@@ -34,4 +34,9 @@ public class PlayerMovement : MonoBehaviour
         //Movement
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("TRIGGER"); 
+        
+    }   
 }

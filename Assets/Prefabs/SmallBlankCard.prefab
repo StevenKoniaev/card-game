@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 6023785827056610927}
   - component: {fileID: 191520759502586307}
   - component: {fileID: 2343161194472134744}
+  - component: {fileID: 6993679234573570966}
   m_Layer: 5
   m_Name: SmallBlankCard
   m_TagString: Untagged
@@ -647,6 +648,18 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &6993679234573570966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5641730695170133979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4d3f0071219fb45bd297e9a63555ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5807604174647653706
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ START, PLAYERTURN, ENEMYTURN, WON, LOST, ENEEMYBATTLE
 //This boi is the main script who manages everything in a fight - Be WARNED ~! 
 public class BattleSystem : MonoBehaviour
 {
-    
+    public GameObject canvas;
     public BattleState state;
     CardGameManager cmang; 
     PlayerHUD playerHud;
@@ -19,14 +19,12 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         cmang = GetComponent<CardGameManager>();
         playerHud = GetComponent<PlayerHUD>();
-        SetupBattle(enemy);
-        int manaStart = cmang.manatotal;
     } 
 
     public void SetupBattle(Enemy[] enemies){
+         int manaStart = cmang.manatotal;
         if (enemy == null){
             enemy = enemies;
         }
@@ -62,7 +60,7 @@ public class BattleSystem : MonoBehaviour
        state = BattleState.PLAYERTURN;
        PlayerHUDChanges("Your turn");
 
-       yield return new WaitForSeconds(1f);
+       yield return new WaitForSecondsRealtime(1f);
 
        playerHud.StopTextTurnText();
     }
@@ -117,7 +115,7 @@ public class BattleSystem : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSecondsRealtime(0f);
     }
 
     public IEnumerator EnemyTurn(){
@@ -130,7 +128,7 @@ public class BattleSystem : MonoBehaviour
     chosenAction.CardAction(cmang.board, 2, 3);
 
         Debug.Log("Enemy ATTACK!");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
 
 
 
@@ -151,5 +149,12 @@ public class BattleSystem : MonoBehaviour
         } else if  (state == BattleState.LOST){
             playerHud.HUDTextUpdate("You lost...");
         }
+        canvas.SetActive(false);
+    }
+
+    public void BeginFight(Enemy[] enemyOverworld){
+        this.enemy = enemyOverworld;
+        canvas.SetActive(true);
+        SetupBattle(enemy);
     }
 }
