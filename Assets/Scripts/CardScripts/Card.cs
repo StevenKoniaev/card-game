@@ -28,6 +28,7 @@ public virtual void TakeDamage(int dmg){
     if (health > 0){
         
     } else {
+        myDisplay.GetComponent<CardDeath>().CardDestruction();
         //Destroy(myDisplay.transform.parent.gameObject);
     }
 }

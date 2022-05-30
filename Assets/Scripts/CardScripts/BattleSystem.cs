@@ -21,6 +21,7 @@ public class BattleSystem : MonoBehaviour
     {
         cmang = GetComponent<CardGameManager>();
         playerHud = GetComponent<PlayerHUD>();
+        BeginFight(enemy);
     } 
 
     public void SetupBattle(Enemy[] enemies){
