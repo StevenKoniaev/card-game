@@ -9,35 +9,52 @@ START, PLAYERTURN, ENEMYTURN, WON, LOST, ENEEMYBATTLE
 //This boi is the main script who manages everything in a fight - Be WARNED ~! 
 public class BattleSystem : MonoBehaviour
 {
+    
     public GameObject canvas;
     public BattleState state;
     CardGameManager cmang; 
     PlayerHUD playerHud;
     public GameObject enemyPrefab;
-    public Enemy[] enemy;
+   public List<Enemy> pHolderenemy = new List<Enemy>();
     public Transform enemyArea;
     // Start is called before the first frame update
     void Start()
     {
         cmang = GetComponent<CardGameManager>();
         playerHud = GetComponent<PlayerHUD>();
-        BeginFight(enemy);
+        
+       SetupBattle();
     } 
 
-    public void SetupBattle(Enemy[] enemies){
-         int manaStart = cmang.manatotal;
-        if (enemy == null){
-            enemy = enemies;
+    private bool EnemyPredictable(Enemy e){
+        return true;
+    }
+
+    public void SetupBattle(){
+        if (StaticEnemy.enemyToFight.Count != 0){
+            pHolderenemy.RemoveAll(EnemyPredictable);
+
+            for (int i = 0; i < StaticEnemy.enemyToFight.Count; i ++){
+                pHolderenemy.Add(StaticEnemy.enemyToFight[i]);
+            }
         }
-        for (int i = 0 ; i < enemies.Length; i++){
+
+         int manaStart = cmang.manatotal;
+        
+        for (int i = 0 ; i < pHolderenemy.Count; i++){
             GameObject enemyObject = Instantiate(enemyPrefab, new Vector3(0,0,0), Quaternion.identity);
             enemyObject.transform.SetParent(enemyArea.transform, false);
-            enemyObject.GetComponent<EnemyDisplay>().SetEnemyInfo(enemy[i]);
+            enemyObject.GetComponent<EnemyDisplay>().SetEnemyInfo(pHolderenemy[i]);
         }
-        //Temporary 
-        cmang.board[0, 3] = enemy[0];
-        cmang.board[1, 3] = enemy[0];
-        cmang.board[2, 3] = enemy[0];
+
+     
+            //Temporary 
+            cmang.board[0, 3] = pHolderenemy[0];
+        cmang.board[1, 3] = pHolderenemy[0];
+        cmang.board[2, 3] = pHolderenemy[0];
+   
+        
+        
 
         cmang.mana = cmang.manaStart;
         cmang.manatotal = cmang.manaStart;
@@ -93,11 +110,10 @@ public class BattleSystem : MonoBehaviour
                 }
             }
         }
-        
         //Checking to see how many enemies are alive or dead
         bool isDead = false;
-        for (int i = 0; i < enemy.Length; i++){
-            if (enemy[i].health > 0){
+        for (int i = 0; i < StaticEnemy.enemyToFight.Count; i++){
+            if (StaticEnemy.enemyToFight[i].health > 0){
                 isDead = false;
                 break;
             }
@@ -114,14 +130,12 @@ public class BattleSystem : MonoBehaviour
             StartCoroutine(EnemyTurn());
         }
 
-
-
         yield return new WaitForSecondsRealtime(0f);
     }
 
     public IEnumerator EnemyTurn(){
         //Enemy attack code 
-            Action chosenAction = enemy[0].cActions[Random.Range(0, enemy[0].cActions.Length)];
+            Action chosenAction = pHolderenemy[0].cActions[Random.Range(0, pHolderenemy[0].cActions.Length)];
       Debug.Log(chosenAction);
         
         chosenAction.CardAction(cmang.board, 0, 3);
@@ -153,9 +167,5 @@ public class BattleSystem : MonoBehaviour
         canvas.SetActive(false);
     }
 
-    public void BeginFight(Enemy[] enemyOverworld){
-        this.enemy = enemyOverworld;
-        canvas.SetActive(true);
-        SetupBattle(enemy);
-    }
+    
 }
