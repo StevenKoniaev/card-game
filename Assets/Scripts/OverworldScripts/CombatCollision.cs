@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CombatCollision : MonoBehaviour
 {
-    public Enemy[] enemy;
-    public BattleSystem bs;
+    public List<Enemy> enemy = new List<Enemy>();
+
       private void OnCollisionEnter2D(Collision2D other) {
-          BeginFight();
           this.enabled = false;
           Time.timeScale = 0;
+          StaticEnemy.BeginFight(enemy);
      }
 
-     void BeginFight(){
-         bs.BeginFight(enemy);
-     }
 
 
 

@@ -59,6 +59,19 @@ public class AttackAction : Action
                 }
                 break;
             }
+
+            case Direction.ALL:
+            {
+                for (int i=0; i < board.GetLength(0); i++){
+                    for (int j=0; j < board.GetLength(1)-1; j++){
+                        if (board[i,j] != null){
+                            board[i,j].TakeDamage(damage);
+                        }
+                       
+                    }
+                }
+                break;
+            }
             default:{} break;
         }
         

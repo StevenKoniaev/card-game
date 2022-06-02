@@ -17,9 +17,10 @@ MonoBehaviour:
   artwork: {fileID: -2054164056, guid: a41a606ac56d9494ab88f9639b3bec19, type: 3}
   cost: 0
   myDisplay: {fileID: 0}
-  health: 5
+  health: 2
   healthMax: 5
   cActions:
-  - {fileID: 11400000, guid: 4a15da7478d12e24886aa9839d6cc141, type: 2}
+  - {fileID: 11400000, guid: a8ffe46b8cec06645bb087bb481e71fe, type: 2}
   animatorcontroller: {fileID: 9100000, guid: 5996c4eb058a4444288ac730752f78a0, type: 2}
+  enemyDisplay: {fileID: 0}
   description: 'Surrender your soul : > '
