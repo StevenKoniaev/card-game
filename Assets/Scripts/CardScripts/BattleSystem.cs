@@ -18,6 +18,8 @@ public class BattleSystem : MonoBehaviour
    public List<Enemy> pHolderenemy = new List<Enemy>();
     public Transform enemyArea;
     public GameObject isTarget; 
+
+    Action chosenEnemyAction;
      ReferenceGridObjects refGrid;
 
     // Start is called before the first frame update
@@ -90,8 +92,8 @@ public class BattleSystem : MonoBehaviour
 
 
        //Which cells is the enemy targetting? What attack will it be with?
-       Action chosenAction = pHolderenemy[0].cActions[Random.Range(0, pHolderenemy[0].cActions.Length)];
-       bool[,] arrTarget  = chosenAction.TargetSpaces(cmang.board);
+       chosenEnemyAction = pHolderenemy[0].cActions[Random.Range(0, pHolderenemy[0].cActions.Length)];
+       bool[,] arrTarget  = chosenEnemyAction.TargetSpaces(cmang.board);
        
        for (int i = 0; i < arrTarget.GetLength(0); i++){
            for (int j = 0; j < arrTarget.GetLength(0); j++){
@@ -164,10 +166,9 @@ public class BattleSystem : MonoBehaviour
 
        playerHud.StopTextTurnText();
 
-        //Enemy attack code 
-            Action chosenAction = pHolderenemy[0].cActions[Random.Range(0, pHolderenemy[0].cActions.Length)];
+
         
-        chosenAction.CardAction(cmang.board, 0, 3);
+        chosenEnemyAction.CardAction(cmang.board, 0, 3);
          //  chosenAction.CardAction(cmang.board, 1, 3);
         // chosenAction.CardAction(cmang.board, 2, 3);
 
