@@ -17,11 +17,15 @@ public class BattleSystem : MonoBehaviour
     public GameObject enemyPrefab;
    public List<Enemy> pHolderenemy = new List<Enemy>();
     public Transform enemyArea;
+    public GameObject isTarget; 
+     ReferenceGridObjects refGrid;
+
     // Start is called before the first frame update
     void Start()
     {
         cmang = GetComponent<CardGameManager>();
         playerHud = GetComponent<PlayerHUD>();
+        refGrid = GetComponent<ReferenceGridObjects>();
         
        SetupBattle();
     } 
@@ -48,8 +52,8 @@ public class BattleSystem : MonoBehaviour
         }
 
      
-            //Temporary 
-            cmang.board[0, 3] = pHolderenemy[0];
+        //Temporary 
+        cmang.board[0, 3] = pHolderenemy[0];
         cmang.board[1, 3] = pHolderenemy[0];
         cmang.board[2, 3] = pHolderenemy[0];
    
@@ -58,6 +62,8 @@ public class BattleSystem : MonoBehaviour
 
         cmang.mana = cmang.manaStart;
         cmang.manatotal = cmang.manaStart;
+
+
         StartCoroutine(PlayerTurn());
     }
 
@@ -81,6 +87,23 @@ public class BattleSystem : MonoBehaviour
        yield return new WaitForSecondsRealtime(1f);
 
        playerHud.StopTextTurnText();
+
+
+       //Which cells is the enemy targetting? What attack will it be with?
+       Action chosenAction = pHolderenemy[0].cActions[Random.Range(0, pHolderenemy[0].cActions.Length)];
+       bool[,] arrTarget  = chosenAction.TargetSpaces(cmang.board);
+       
+       for (int i = 0; i < arrTarget.GetLength(0); i++){
+           for (int j = 0; j < arrTarget.GetLength(0); j++){
+               if (arrTarget[i,j] == true){
+                  
+                   GameObject myTarget = Instantiate(isTarget, new Vector3(0,0,0), Quaternion.identity);
+                    myTarget.transform.SetParent(canvas.transform,false);
+                    myTarget.transform.position = refGrid.arrRef[i][j].transform.position;
+               }
+           }
+       }
+
     }
 
     public void PlayerHUDChanges(string text){
@@ -134,13 +157,19 @@ public class BattleSystem : MonoBehaviour
     }
 
     public IEnumerator EnemyTurn(){
+        //Display message
+        PlayerHUDChanges("Enemy Turn");
+
+       yield return new WaitForSecondsRealtime(1f);
+
+       playerHud.StopTextTurnText();
+
         //Enemy attack code 
             Action chosenAction = pHolderenemy[0].cActions[Random.Range(0, pHolderenemy[0].cActions.Length)];
-      Debug.Log(chosenAction);
         
         chosenAction.CardAction(cmang.board, 0, 3);
-        chosenAction.CardAction(cmang.board, 1, 3);
-    chosenAction.CardAction(cmang.board, 2, 3);
+         //  chosenAction.CardAction(cmang.board, 1, 3);
+        // chosenAction.CardAction(cmang.board, 2, 3);
 
         Debug.Log("Enemy ATTACK!");
         yield return new WaitForSecondsRealtime(1f);
@@ -158,6 +187,9 @@ public class BattleSystem : MonoBehaviour
             PlayerTurn();
         }
     }
+
+
+
     public void EndBattle(){
         if (state== BattleState.WON){
           playerHud.HUDTextUpdate("You won!");
