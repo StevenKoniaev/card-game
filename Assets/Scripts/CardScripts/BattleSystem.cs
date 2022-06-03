@@ -50,7 +50,7 @@ public class BattleSystem : MonoBehaviour
         for (int i = 0 ; i < pHolderenemy.Count; i++){
             GameObject enemyObject = Instantiate(enemyPrefab, new Vector3(0,0,0), Quaternion.identity);
             enemyObject.transform.SetParent(enemyArea.transform, false);
-            enemyObject.GetComponent<EnemyDisplay>().SetEnemyInfo(pHolderenemy[i]);
+            enemyObject.GetComponent<CardDisplay>().SetInfo(pHolderenemy[i]);
         }
 
      

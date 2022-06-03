@@ -569,10 +569,11 @@ MonoBehaviour:
   card: {fileID: 11400000, guid: 10d99a5f1f0c2d041bc7eddb4a25d5b9, type: 2}
   healthHolder: {fileID: 7219171715744385480}
   nameText: {fileID: 2457775484348623066}
-  descriptionText: {fileID: 4939265755621419875}
+  effectText: {fileID: 4939265755621419875}
   artwork: {fileID: 6787663952513976801}
   costText: {fileID: 8440101648650081711}
   healthText: {fileID: 579941049242850071}
+  animator: {fileID: 5038226125328267672}
 --- !u!114 &6023785827056610927
 MonoBehaviour:
   m_ObjectHideFlags: 0

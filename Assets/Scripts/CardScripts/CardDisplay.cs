@@ -6,15 +6,18 @@ using TMPro;
 public class CardDisplay : MonoBehaviour
 {
 
+    [HideInInspector]
     public Card card = null;
-      public GameObject healthHolder;
 
+      public GameObject healthHolder;
       //Properties to display
       public TextMeshProUGUI nameText;
-      public TextMeshProUGUI descriptionText;
+      public TextMeshProUGUI effectText;
       public Image artwork;
       public TextMeshProUGUI costText;
       public TextMeshProUGUI healthText;
+
+      public Animator animator;
 
 
     public void SetInfo(Card myCard){
@@ -23,15 +26,32 @@ public class CardDisplay : MonoBehaviour
         return;
       }
         this.card = myCard;
-        nameText.text = myCard.name;
+
+        if (nameText != null){
+          nameText.text = myCard.name;
+        }
+          
+        if (costText != null){
+          costText.text = myCard.cost.ToString();
+        }
+          
+        if (animator != null && myCard.animatorcontroller != null){
+          animator.runtimeAnimatorController = myCard.animatorcontroller;
+        }
+        
         artwork.sprite = myCard.artwork;
-        costText.text = myCard.cost.ToString();
+
         myCard.health = myCard.healthMax;
         healthText.text = myCard.health.ToString();
+
         myCard.myDisplay = this;
-        for (int i =0; i < myCard.cActions.Length; i++){
-          descriptionText.text += myCard.cActions[i].descriptionText + "\n";
+
+        if (effectText != null){
+          for (int i =0; i < myCard.cActions.Length; i++){
+          effectText.text += myCard.cActions[i].descriptionText + "\n";
         }
+        }
+        
     }
 
     public void CardUpdate(Card myCard){

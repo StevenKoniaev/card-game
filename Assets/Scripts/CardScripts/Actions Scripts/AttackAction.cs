@@ -16,10 +16,8 @@ public class AttackAction : Action
         //Doing now! Is there a better way to do this? Think about it.\
         //Switch statment + enum is so clean
         if (attackPrefab != null){
-            
-            GameObject holder = Instantiate(attackPrefab, new Vector3(board[x, y+1].myDisplay.transform.position.x, board[x, y+1].myDisplay.transform.position.y, 0), Quaternion.identity);
-            
-          //  holder.AddComponent<WaiterClass>().StartUp(holder);
+            GameObject holder = Instantiate(attackPrefab, new Vector3(board[x, y+1].myDisplay.transform.position.x, board[x, y+1].myDisplay.transform.position.y, 0), Quaternion.identity); 
+          //  holder.AddComponent<WaiterClass>().StartUp(holder); Delay
         }
         switch (direction){
             //Check direction of attack action!
