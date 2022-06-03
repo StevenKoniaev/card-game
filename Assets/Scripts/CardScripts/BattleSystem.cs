@@ -70,6 +70,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     public IEnumerator PlayerTurn(){
+        
         state = BattleState.START;
         cmang.manatotal += 1;
         cmang.mana = cmang.manatotal;
@@ -81,7 +82,6 @@ public class BattleSystem : MonoBehaviour
         cmang.DrawCard();
         cmang.DrawCard();
        
-
        //Player begins!
        state = BattleState.PLAYERTURN;
        PlayerHUDChanges("Your turn");
@@ -107,7 +107,7 @@ public class BattleSystem : MonoBehaviour
                }
            }
        }
-
+       StopCoroutine(PlayerTurn());
     }
 
     public void PlayerHUDChanges(string text){
@@ -139,8 +139,8 @@ public class BattleSystem : MonoBehaviour
         }
         //Checking to see how many enemies are alive or dead
         bool isDead = false;
-        for (int i = 0; i < StaticEnemy.enemyToFight.Count; i++){
-            if (StaticEnemy.enemyToFight[i].health > 0){
+        for (int i = 0; i < pHolderenemy.Count; i++){
+            if (pHolderenemy[i].health > 0){
                 isDead = false;
                 break;
             }
@@ -161,6 +161,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     public IEnumerator EnemyTurn(){
+        StopCoroutine(AttackPhase());
         yield return new WaitForSecondsRealtime(1f);
         //Display message
         PlayerHUDChanges("Enemy Turn");
@@ -175,7 +176,6 @@ public class BattleSystem : MonoBehaviour
          //  chosenAction.CardAction(cmang.board, 1, 3);
         // chosenAction.CardAction(cmang.board, 2, 3);
 
-        Debug.Log("Enemy ATTACK!");
         yield return new WaitForSecondsRealtime(1f);
 
         for (int i = 0; i < gridTargets.Count; i++){
@@ -189,7 +189,9 @@ public class BattleSystem : MonoBehaviour
             EndBattle();
         } else {
             state = BattleState.PLAYERTURN;
-            PlayerTurn();
+      
+            StartCoroutine(PlayerTurn());
+            StopCoroutine(EnemyTurn());
         }
     }
 
