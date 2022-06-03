@@ -19,6 +19,9 @@ public CardDisplay myDisplay = null;
 public int health;
 public int healthMax;
 
+public RuntimeAnimatorController animatorcontroller;
+
+
 public Action[] cActions;
 
 public virtual void TakeDamage(int dmg){
@@ -26,10 +29,11 @@ public virtual void TakeDamage(int dmg){
     Debug.Log(this.health);
     myDisplay.CardUpdate(this);
     if (health > 0){
-        
+        //Play the damage animation
+        myDisplay.GetComponent<Animator>().SetTrigger("takeDamage");
     } else {
-        myDisplay.GetComponent<CardDeath>().CardDestruction();
-        //Destroy(myDisplay.transform.parent.gameObject);
+      myDisplay.GetComponent<TriggerDestructionPrefab>().BeginDestruction();
+        Destroy(myDisplay.transform.gameObject);
     }
 }
     

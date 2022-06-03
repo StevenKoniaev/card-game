@@ -16,6 +16,7 @@ public class CardDisplay : MonoBehaviour
       public TextMeshProUGUI costText;
       public TextMeshProUGUI healthText;
 
+
     public void SetInfo(Card myCard){
 
       if (myCard == null){

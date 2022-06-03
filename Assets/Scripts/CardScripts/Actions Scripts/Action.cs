@@ -8,6 +8,8 @@ public abstract class Action : ScriptableObject
        UP, DOWN, LEFT, RIGHT, SPLASH, RANDOM5, ALL
    }
   public string descriptionText;
+
+  public GameObject attackPrefab;
   public Direction direction;
   public abstract void CardAction(Card[,] board, int x, int y);
 
