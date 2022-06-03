@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: EnemyAttack
   m_EditorClassIdentifier: 
   descriptionText: 
+  attackPrefab: {fileID: 0}
   direction: 6
-  damage: 5
+  damage: 2

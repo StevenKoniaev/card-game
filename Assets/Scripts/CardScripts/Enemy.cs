@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Enemy : Card
 {
-public RuntimeAnimatorController animatorcontroller;
+
 public EnemyDisplay enemyDisplay;
 
 public string description;

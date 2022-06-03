@@ -514,7 +514,8 @@ GameObject:
   - component: {fileID: 6023785827056610927}
   - component: {fileID: 191520759502586307}
   - component: {fileID: 2343161194472134744}
-  - component: {fileID: 6993679234573570966}
+  - component: {fileID: 1558413011870105207}
+  - component: {fileID: 5038226125328267672}
   m_Layer: 5
   m_Name: SmallBlankCard
   m_TagString: Untagged
@@ -617,7 +618,7 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
---- !u!114 &6993679234573570966
+--- !u!114 &1558413011870105207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -626,10 +627,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 5641730695170133979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c4d3f0071219fb45bd297e9a63555ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 48fb22f2672e33040a5b817b0a2a71b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDestroyer: {fileID: 4248583074624814527, guid: c61a96a08cb03e8419ea9976a4975c49, type: 3}
+  deathHolder: {fileID: 2667211864111844394, guid: a9a9e89b61068b841995095a644b8302, type: 3}
+--- !u!95 &5038226125328267672
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5641730695170133979}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2342d650cee14ea4a8715e7b7d682e1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5807604174647653706
 GameObject:
   m_ObjectHideFlags: 0

@@ -414,7 +414,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.12375
+  orthographic size: 0.8416667
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -622,15 +622,15 @@ PrefabInstance:
       objectReference: {fileID: 2003608910, guid: 1e5cbf4cdefcf8748bf10a5a9c2a2771, type: 3}
     - target: {fileID: 4254719677156006110, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Color.b
-      value: 0.21960786
+      value: 0.19607845
       objectReference: {fileID: 0}
     - target: {fileID: 4254719677156006110, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Color.g
-      value: 0.21960786
+      value: 0.19607845
       objectReference: {fileID: 0}
     - target: {fileID: 4254719677156006110, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Color.r
-      value: 0.21960786
+      value: 0.19607845
       objectReference: {fileID: 0}
     - target: {fileID: 4254719677156006110, guid: 021d4ce746ee6214aade9c4ff8b533d6, type: 3}
       propertyPath: m_Material
@@ -1178,7 +1178,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7767175, y: 1}
+    m_SensorSize: {x: 1.7782178, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1746,7 +1746,7 @@ Canvas:
   m_GameObject: {fileID: 1657343427}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
@@ -3209,7 +3209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8393857193549851956, guid: 7c30ecf6deea7224b8c8d166412cd1b0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 104.11
+      value: 104.109985
       objectReference: {fileID: 0}
     - target: {fileID: 8393857193549851956, guid: 7c30ecf6deea7224b8c8d166412cd1b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
