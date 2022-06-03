@@ -18,7 +18,7 @@ public class BattleSystem : MonoBehaviour
    public List<Enemy> pHolderenemy = new List<Enemy>();
     public Transform enemyArea;
     public GameObject isTarget; 
-
+    List<GameObject> gridTargets = new List<GameObject>();
     Action chosenEnemyAction;
      ReferenceGridObjects refGrid;
 
@@ -65,7 +65,7 @@ public class BattleSystem : MonoBehaviour
         cmang.mana = cmang.manaStart;
         cmang.manatotal = cmang.manaStart;
 
-
+        
         StartCoroutine(PlayerTurn());
     }
 
@@ -101,6 +101,8 @@ public class BattleSystem : MonoBehaviour
                   
                    GameObject myTarget = Instantiate(isTarget, new Vector3(0,0,0), Quaternion.identity);
                     myTarget.transform.SetParent(canvas.transform,false);
+                    //Add to array to delete later
+                    gridTargets.Add(myTarget);
                     myTarget.transform.position = refGrid.arrRef[i][j].transform.position;
                }
            }
@@ -159,6 +161,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     public IEnumerator EnemyTurn(){
+        yield return new WaitForSecondsRealtime(1f);
         //Display message
         PlayerHUDChanges("Enemy Turn");
 
@@ -175,8 +178,9 @@ public class BattleSystem : MonoBehaviour
         Debug.Log("Enemy ATTACK!");
         yield return new WaitForSecondsRealtime(1f);
 
-
-
+        for (int i = 0; i < gridTargets.Count; i++){
+            Destroy(gridTargets[i]);
+        }
 
         bool isDead = false;        
         //Take damage
@@ -197,7 +201,7 @@ public class BattleSystem : MonoBehaviour
         } else if  (state == BattleState.LOST){
             playerHud.HUDTextUpdate("You lost...");
         }
-        canvas.SetActive(false);
+      
     }
 
     

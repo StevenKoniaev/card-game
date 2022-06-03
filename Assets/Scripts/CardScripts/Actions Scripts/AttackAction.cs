@@ -19,6 +19,7 @@ public class AttackAction : Action
             
             GameObject holder = Instantiate(attackPrefab, new Vector3(board[x, y+1].myDisplay.transform.position.x, board[x, y+1].myDisplay.transform.position.y, 0), Quaternion.identity);
             
+          //  holder.AddComponent<WaiterClass>().StartUp(holder);
         }
         switch (direction){
             //Check direction of attack action!
@@ -28,7 +29,7 @@ public class AttackAction : Action
                 if (x+1 < board.GetLength(0)){
                     if (board[x+1, y] != null){
                         board[x+1, y].TakeDamage(damage);
-                        Debug.Log(board[x+1,y].health);
+                       
                     }
                 }
                 break;
@@ -78,8 +79,7 @@ public class AttackAction : Action
             }
             default:{} break;
         }
-        
-        
-
     }
+
+    
 }
