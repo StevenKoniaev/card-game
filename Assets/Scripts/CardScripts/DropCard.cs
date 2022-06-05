@@ -23,18 +23,19 @@ public void Start(){
   public void OnDrop(PointerEventData eventData){
      Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
    
-      if (d!=null){
+      if (d!=null && this.x != -1 && d.canDrag == true){
         int cardCost = d.GetComponent<CardDisplay>().card.cost;
           if (cmang.mana >=  cardCost){
               cmang.mana -= cardCost;
               playerHud.SetPlayerMana(cmang.mana);
               
                 d.parentToReturnTo = this.transform;
-                if (x != -1 && y != -1){
-              
+                
                 eventData.pointerDrag.transform.localScale = new Vector3(0.9f,0.9f,1);
                 cmang.board[x,y] = eventData.pointerDrag.GetComponent<CardDisplay>().card;
-        }
+               
+                this.enabled = false;
+        
       }
         }
   }

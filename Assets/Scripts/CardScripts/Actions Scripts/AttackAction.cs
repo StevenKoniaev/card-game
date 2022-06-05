@@ -19,15 +19,18 @@ public class AttackAction : Action
             GameObject holder = Instantiate(attackPrefab, new Vector3(board[x, y+1].myDisplay.transform.position.x, board[x, y+1].myDisplay.transform.position.y, 0), Quaternion.identity); 
           //  holder.AddComponent<WaiterClass>().StartUp(holder); Delay
         }
+
+     
+
         switch (direction){
             //Check direction of attack action!
             
             case Direction.UP:
             {
+                
                 if (x+1 < board.GetLength(0)){
                     if (board[x+1, y] != null){
-                        board[x+1, y].TakeDamage(damage);
-                       
+                        board[x+1, y].TakeDamage(damage, board, x+1, y);
                     }
                 }
                 break;
@@ -37,7 +40,7 @@ public class AttackAction : Action
             {
                 if (x-1 >= 0){
                     if (board[x-1, y] != null){
-                        board[x-1, y].TakeDamage(damage);
+                        board[x-1, y].TakeDamage(damage, board, x-1, y);
                       
                     }
                 }
@@ -46,7 +49,7 @@ public class AttackAction : Action
             case Direction.LEFT:{
                 if (y-1 >= 0){
                     if (board[x, y-1] != null){
-                        board[x, y-1].TakeDamage(damage);
+                        board[x, y-1].TakeDamage(damage, board, x, y-1);
                        
                     }
                 }
@@ -56,7 +59,7 @@ public class AttackAction : Action
             {
                   if (y+1 < board.GetLength(1)){
                     if (board[x, y+1] != null){
-                        board[x, y+1].TakeDamage(damage);
+                        board[x, y+1].TakeDamage(damage, board, x, y+1);
                        
                     }
                 }
@@ -68,7 +71,11 @@ public class AttackAction : Action
                 for (int i=0; i < board.GetLength(0); i++){
                     for (int j=0; j < board.GetLength(1)-1; j++){
                         if (board[i,j] != null){
-                            board[i,j].TakeDamage(damage);
+                            board[i,j].TakeDamage(damage, board, i, j);
+                        }
+
+                        if(board[i,j] == null){
+                            HealthSystem.Damage(damage);
                         }
                        
                     }

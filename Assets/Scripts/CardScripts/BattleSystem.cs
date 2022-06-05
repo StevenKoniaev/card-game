@@ -21,6 +21,7 @@ public class BattleSystem : MonoBehaviour
     List<GameObject> gridTargets = new List<GameObject>();
     Action chosenEnemyAction;
      ReferenceGridObjects refGrid;
+     public HealthbarHandler hpbar;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +65,7 @@ public class BattleSystem : MonoBehaviour
 
         cmang.mana = cmang.manaStart;
         cmang.manatotal = cmang.manaStart;
-
+        hpbar.StartReduceHealth();
         
         StartCoroutine(PlayerTurn());
     }
@@ -79,8 +80,7 @@ public class BattleSystem : MonoBehaviour
         cmang.DrawCard();
         cmang.DrawCard();
         cmang.DrawCard();
-        cmang.DrawCard();
-        cmang.DrawCard();
+
        
        //Player begins!
        state = BattleState.PLAYERTURN;
@@ -173,6 +173,8 @@ public class BattleSystem : MonoBehaviour
 
         
         chosenEnemyAction.CardAction(cmang.board, 0, 3);
+        
+        hpbar.StartReduceHealth();
          //  chosenAction.CardAction(cmang.board, 1, 3);
         // chosenAction.CardAction(cmang.board, 2, 3);
 

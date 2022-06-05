@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionText: Deal 3 damage!
   attackPrefab: {fileID: 5274385716400405822, guid: 2b13a6a99674dfe49975fb62cbd3774e, type: 3}
-  direction: 3
+  direction: 0
   damage: 3

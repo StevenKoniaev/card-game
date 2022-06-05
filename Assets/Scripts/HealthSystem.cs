@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class HealthSystem {
-    private static int health;
-    private static int healthMax;
+    private static float health = 20;
+    private static float healthMax = 20;
+
 
    public static void SetHealth( int healthSet){
        health = healthSet;
        healthMax = healthSet;
+
+       
    }
 
    public static void Damage(int damage){
@@ -16,6 +19,7 @@ public static class HealthSystem {
        if (health < 0 ){
            health = 0;
        }
+       
    }
 
    public static void Heal(int heal){
@@ -23,9 +27,14 @@ public static class HealthSystem {
        if (health > healthMax){
            health = healthMax;
        }
+      
    }
-    public static int GetHealth(){
+    public static float GetHealth(){
         return health;
+    }
+
+    public static float GetMaxHealth(){
+        return healthMax;
     }
 }
 

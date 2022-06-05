@@ -25,7 +25,7 @@ public RuntimeAnimatorController animatorcontroller;
 
 public Action[] cActions;
 
-public virtual void TakeDamage(int dmg){
+public virtual void TakeDamage(int dmg, Card[,] board, int x, int y){
     health -= dmg;
     myDisplay.CardUpdate(this);
     if (health > 0){
@@ -33,6 +33,7 @@ public virtual void TakeDamage(int dmg){
         myDisplay.animator.SetTrigger("takeDamage");
     } else {
       myDisplay.GetComponent<TriggerDestructionPrefab>().BeginDestruction();
+      board[x,y] = null;
         Destroy(myDisplay.transform.gameObject);
     }
 }
