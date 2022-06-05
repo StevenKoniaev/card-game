@@ -23,6 +23,8 @@ public class BattleSystem : MonoBehaviour
      ReferenceGridObjects refGrid;
      public HealthbarHandler hpbar;
 
+     bool[,] arrTarget;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,7 +95,7 @@ public class BattleSystem : MonoBehaviour
 
        //Which cells is the enemy targetting? What attack will it be with?
        chosenEnemyAction = pHolderenemy[0].cActions[Random.Range(0, pHolderenemy[0].cActions.Length)];
-       bool[,] arrTarget  = chosenEnemyAction.TargetSpaces(cmang.board);
+        arrTarget  = chosenEnemyAction.TargetSpaces(cmang.board);
        
        for (int i = 0; i < arrTarget.GetLength(0); i++){
            for (int j = 0; j < arrTarget.GetLength(0); j++){

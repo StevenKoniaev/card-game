@@ -71,6 +71,7 @@ public class AttackAction : Action
                 for (int i=0; i < board.GetLength(0); i++){
                     for (int j=0; j < board.GetLength(1)-1; j++){
                         if (board[i,j] != null){
+                            AttackAnimation(board, i, j);
                             board[i,j].TakeDamage(damage, board, i, j);
                         }
 
@@ -80,6 +81,13 @@ public class AttackAction : Action
                        
                     }
                 }
+                break;
+            }
+
+            case Direction.COLUMNRIGHT:{
+                break;
+            }
+            case Direction.RANDOM5:{
                 break;
             }
             default:{} break;

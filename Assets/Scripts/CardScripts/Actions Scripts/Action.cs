@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Action : ScriptableObject
 {
   public enum Direction{
-       UP, DOWN, LEFT, RIGHT, SPLASH, RANDOM5, ALL
+       UP, DOWN, LEFT, RIGHT, SPLASH, RANDOM5, ALL, COLUMNRIGHT, RANDOM4
    }
   public string descriptionText;
 
@@ -26,6 +26,22 @@ public abstract class Action : ScriptableObject
           }
         }
         return arrTarget;
+     }
+
+     case Direction.RANDOM5: {
+       for (int k = 0; k < 5; k++){
+         int i = Random.Range(0, board.GetLength(0));
+         int j = Random.Range(0, board.GetLength(1)-1);
+         arrTarget[i, j] = true;
+       }
+       return arrTarget;
+     }
+
+     case Direction.COLUMNRIGHT:{
+       for (int i =0; i < arrTarget.GetLength(0); i++){
+         arrTarget[i,2] = true;
+       }
+       return arrTarget;
      }
       default:{}break;
     
