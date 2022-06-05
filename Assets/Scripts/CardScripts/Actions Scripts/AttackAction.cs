@@ -15,10 +15,7 @@ public class AttackAction : Action
         //TODO switch the directon be an enum or something ~ 
         //Doing now! Is there a better way to do this? Think about it.\
         //Switch statment + enum is so clean
-        if (attackPrefab != null){
-            GameObject holder = Instantiate(attackPrefab, new Vector3(board[x, y+1].myDisplay.transform.position.x, board[x, y+1].myDisplay.transform.position.y, 0), Quaternion.identity); 
-          //  holder.AddComponent<WaiterClass>().StartUp(holder); Delay
-        }
+      
 
      
 
@@ -27,9 +24,9 @@ public class AttackAction : Action
             
             case Direction.UP:
             {
-                
                 if (x+1 < board.GetLength(0)){
                     if (board[x+1, y] != null){
+                        AttackAnimation(board, x+1, y);
                         board[x+1, y].TakeDamage(damage, board, x+1, y);
                     }
                 }
@@ -40,6 +37,7 @@ public class AttackAction : Action
             {
                 if (x-1 >= 0){
                     if (board[x-1, y] != null){
+                        AttackAnimation(board, x-1, y);
                         board[x-1, y].TakeDamage(damage, board, x-1, y);
                       
                     }
@@ -49,6 +47,7 @@ public class AttackAction : Action
             case Direction.LEFT:{
                 if (y-1 >= 0){
                     if (board[x, y-1] != null){
+                        AttackAnimation(board, x, y-1);
                         board[x, y-1].TakeDamage(damage, board, x, y-1);
                        
                     }
@@ -59,6 +58,7 @@ public class AttackAction : Action
             {
                   if (y+1 < board.GetLength(1)){
                     if (board[x, y+1] != null){
+                        AttackAnimation(board, x, y+1);
                         board[x, y+1].TakeDamage(damage, board, x, y+1);
                        
                     }
@@ -86,5 +86,11 @@ public class AttackAction : Action
         }
     }
 
+    void AttackAnimation(Card[,] board, int x, int y){
+        if (attackPrefab != null){
+            GameObject holder = Instantiate(attackPrefab, new Vector3(board[x, y].myDisplay.transform.position.x, board[x, y].myDisplay.transform.position.y, 0), Quaternion.identity); 
+           //  holder.AddComponent<WaiterClass>().StartUp(holder); Delay
+                 }
+    }
     
 }

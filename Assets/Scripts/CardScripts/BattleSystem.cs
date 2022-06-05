@@ -184,9 +184,9 @@ public class BattleSystem : MonoBehaviour
             Destroy(gridTargets[i]);
         }
 
-        bool isDead = false;        
+         
         //Take damage
-        if (isDead){
+        if (HealthSystem.GetHealth() <= 0){
             state = BattleState.LOST;
             EndBattle();
         } else {
