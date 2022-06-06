@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f62924e89b37943b8c358da668f137, type: 3}
-  m_Name: EnemyAttack
+  m_Script: {fileID: 11500000, guid: 7d787b6aa69c52f4188aed2cb10e4805, type: 3}
+  m_Name: New Action
   m_EditorClassIdentifier: 
-  descriptionText: 
+  descriptionText: ATTACK
   attackPrefab: {fileID: 5274385716400405822, guid: 2b13a6a99674dfe49975fb62cbd3774e, type: 3}
   direction: 5
-  damage: 2
+  myType: 0
+  valueForEffect: 2

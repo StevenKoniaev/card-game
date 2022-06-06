@@ -18,6 +18,7 @@ public class CardDisplay : MonoBehaviour
       public TextMeshProUGUI healthText;
       public Image directionImg;
       public Animator animator;
+      
 
 
     public void SetInfo(Card myCard){
@@ -25,7 +26,9 @@ public class CardDisplay : MonoBehaviour
       if (myCard == null){
         return;
       }
-        this.card = myCard;
+        this.card = (myCard);
+
+        
 
         if (nameText != null){
           nameText.text = myCard.name;
@@ -41,10 +44,10 @@ public class CardDisplay : MonoBehaviour
         
         artwork.sprite = myCard.artwork;
 
-        myCard.health = myCard.healthMax;
+        this.card.health = myCard.healthMax;
         healthText.text = myCard.health.ToString();
 
-        myCard.myDisplay = this;
+        this.card.myDisplay = this;
 
         if (effectText != null){
           for (int i =0; i < myCard.cActions.Length; i++){

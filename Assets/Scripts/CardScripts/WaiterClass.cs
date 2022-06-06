@@ -9,7 +9,11 @@ public class WaiterClass : MonoBehaviour
         StartCoroutine(WaitForAnimation(obj));
     }
     public IEnumerator WaitForAnimation(GameObject obj){
-        Debug.Log("IM WATCHING YOU");
-        yield return new WaitForSecondsRealtime(1000);
+        
+        do {
+            
+            yield return new WaitForSecondsRealtime(10f);
+        } while (obj);
+        StopAllCoroutines();
     }
 }

@@ -7,13 +7,47 @@ public abstract class Action : ScriptableObject
   public enum Direction{
        UP, DOWN, LEFT, RIGHT, SPLASH, RANDOM5, ALL, COLUMNRIGHT, RANDOM4
    }
+
+  public enum Type{
+    ATTACK, EFFECT
+  }
+  [SerializeField]
   public string descriptionText;
 
+  [SerializeField]
   public GameObject attackPrefab;
+  [SerializeField]
   public Direction direction;
-  public abstract void CardAction(Card[,] board, int x, int y);
+  public Type myType;
+  
+  public int valueForEffect;
+  
 
-  public bool[,] TargetSpaces(Card[,] board){
+   public void Animation(Card[,] board, int x, int y){
+        if (attackPrefab != null ){
+            GameObject holder = Instantiate(attackPrefab, new Vector3(board[x, y].myDisplay.transform.position.x, board[x, y].myDisplay.transform.position.y, 0), Quaternion.identity); 
+             //holder.AddComponent<WaiterClass>().StartUp(holder); 
+             
+        
+                 }
+    }
+
+    public void Animation(Card[,] board, int x, int y, ReferenceGridObjects refGrid){
+        if (attackPrefab != null ){
+          
+            GameObject holder = Instantiate(attackPrefab, new Vector3(refGrid.arrRef[x][y].transform.position.x, refGrid.arrRef[x][y].transform.position.y, 0), Quaternion.identity); 
+          
+            // holder.AddComponent<WaiterClass>().StartUp(holder); 
+           
+                 }
+    }
+
+  public abstract void CardAction(Card[,] board, int x, int y);
+  public virtual void CardAction(Card[,] board, bool[,] arrTargets, ReferenceGridObjects refGrid){
+
+  }
+
+   public bool[,] TargetSpaces(Card[,] board){
     
     bool[,] arrTarget = new bool[board.GetLength(0), board.GetLength(1)];
 

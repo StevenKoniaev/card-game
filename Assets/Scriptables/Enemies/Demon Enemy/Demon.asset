@@ -21,5 +21,5 @@ MonoBehaviour:
   healthMax: 5
   animatorcontroller: {fileID: 9100000, guid: 5996c4eb058a4444288ac730752f78a0, type: 2}
   cActions:
-  - {fileID: 11400000, guid: a8ffe46b8cec06645bb087bb481e71fe, type: 2}
+  - {fileID: 11400000, guid: 5eea0defce406e742b263a3d294d6a34, type: 2}
   description: Mwwahhahaha!

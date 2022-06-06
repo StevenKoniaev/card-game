@@ -95,8 +95,10 @@ public class BattleSystem : MonoBehaviour
 
        //Which cells is the enemy targetting? What attack will it be with?
        chosenEnemyAction = pHolderenemy[0].cActions[Random.Range(0, pHolderenemy[0].cActions.Length)];
+       pHolderenemy[0].myDisplay.transform.gameObject.GetComponent<EffectDisplay>().SetEffectInfo(chosenEnemyAction);
+
         arrTarget  = chosenEnemyAction.TargetSpaces(cmang.board);
-       
+        
        for (int i = 0; i < arrTarget.GetLength(0); i++){
            for (int j = 0; j < arrTarget.GetLength(0); j++){
                if (arrTarget[i,j] == true){
@@ -109,6 +111,8 @@ public class BattleSystem : MonoBehaviour
                }
            }
        }
+
+
        StopCoroutine(PlayerTurn());
     }
 
@@ -164,7 +168,7 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator EnemyTurn(){
         StopCoroutine(AttackPhase());
-        yield return new WaitForSecondsRealtime(1f);
+        
         //Display message
         PlayerHUDChanges("Enemy Turn");
 
@@ -174,7 +178,7 @@ public class BattleSystem : MonoBehaviour
 
 
         
-        chosenEnemyAction.CardAction(cmang.board, 0, 3);
+        chosenEnemyAction.CardAction(cmang.board, arrTarget, refGrid);
         
         hpbar.StartReduceHealth();
          //  chosenAction.CardAction(cmang.board, 1, 3);

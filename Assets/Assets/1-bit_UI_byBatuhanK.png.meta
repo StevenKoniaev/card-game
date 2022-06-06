@@ -107,10 +107,10 @@ TextureImporter:
       name: 1-bit_UI_byBatuhanK_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 148
-        width: 71
-        height: 103
+        x: 15
+        y: 176
+        width: 15
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -817,6 +817,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 1-bit_UI_byBatuhanK_34
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 175
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51263775f89d8144998c30fdd94554ab
+      internalID: -691585650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-bit_UI_byBatuhanK_35
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 176
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8daca358c43be0499411acfec09bb55
+      internalID: 449043370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-bit_UI_byBatuhanK_36
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 124
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf416b390a800574dbde7444821c97ab
+      internalID: 1915788414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -837,6 +900,7 @@ TextureImporter:
       1-bit_UI_byBatuhanK_32: 1930092490
       1-bit_UI_byBatuhanK_0: 156989550
       1-bit_UI_byBatuhanK_8: 1978349337
+      1-bit_UI_byBatuhanK_35: 449043370
       1-bit_UI_byBatuhanK_27: -1322313115
       1-bit_UI_byBatuhanK_6: 1551043245
       1-bit_UI_byBatuhanK_29: 1998231774
@@ -848,6 +912,7 @@ TextureImporter:
       1-bit_UI_byBatuhanK_30: 1227294044
       1-bit_UI_byBatuhanK_5: 771388944
       1-bit_UI_byBatuhanK_3: 1543138444
+      1-bit_UI_byBatuhanK_34: -691585650
       1-bit_UI_byBatuhanK_2: 1514627284
       1-bit_UI_byBatuhanK_28: -1975327118
       1-bit_UI_byBatuhanK_1: 440533865
@@ -861,6 +926,7 @@ TextureImporter:
       1-bit_UI_byBatuhanK_22: 2072107024
       1-bit_UI_byBatuhanK_17: 2124302204
       1-bit_UI_byBatuhanK_23: 1176287366
+      1-bit_UI_byBatuhanK_36: 1915788414
       1-bit_UI_byBatuhanK_11: 673844791
   spritePackingTag: 
   pSDRemoveMatte: 0
