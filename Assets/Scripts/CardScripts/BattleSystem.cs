@@ -138,7 +138,10 @@ public class BattleSystem : MonoBehaviour
                 if (cmang.board[i,j] != null){
                     for (int k = 0; k < cmang.board[i,j].cActions.Length; k++ ){
                         //Go through array of possible actions and use them
-                        cmang.board[i,j].cActions[k].CardAction(cmang.board, i, j);
+                        if (cmang.board[i,j].cActions[k].activation == Action.Activation.ONENDTURN){
+                            cmang.board[i,j].cActions[k].CardAction(cmang.board, i, j);
+                        }
+                        
                     }
                 }
             }

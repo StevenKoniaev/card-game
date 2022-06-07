@@ -11,6 +11,12 @@ public abstract class Action : ScriptableObject
   public enum Type{
     ATTACK, EFFECT
   }
+
+  public enum Activation{
+    ONPLAY, ONDEATH, ONHIT, ONENDTURN
+  }
+  public Activation activation;
+
   [SerializeField]
   public string descriptionText;
 
@@ -27,9 +33,7 @@ public abstract class Action : ScriptableObject
         if (attackPrefab != null ){
             GameObject holder = Instantiate(attackPrefab, new Vector3(board[x, y].myDisplay.transform.position.x, board[x, y].myDisplay.transform.position.y, 0), Quaternion.identity); 
              //holder.AddComponent<WaiterClass>().StartUp(holder); 
-             
-        
-                 }
+}
     }
 
     public void Animation(Card[,] board, int x, int y, ReferenceGridObjects refGrid){
