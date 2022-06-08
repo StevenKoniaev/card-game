@@ -549,7 +549,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.12375
+  orthographic size: 0.845
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1313,7 +1313,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778865, y: 1}
+    m_SensorSize: {x: 1.7771204, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2831,6 +2831,7 @@ MonoBehaviour:
   deck:
   - {fileID: 11400000, guid: acef9bcfdc0b0f3449f3cf0e23481341, type: 2}
   - {fileID: 11400000, guid: 6c1da5ce7486aac48971059216769a63, type: 2}
+  graveyard: []
   playerArea: {fileID: 645096317}
   cardPrefab: {fileID: 5641730695170133979, guid: a5d35c9e95e23f245abe7753326df823, type: 3}
   manatotal: 0
