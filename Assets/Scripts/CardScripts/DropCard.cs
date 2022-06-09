@@ -38,7 +38,7 @@ public void Start(){
                 for (var i = 0; i < arrAc.Length; i++)
                 {
                     if (arrAc[i].activation == Action.Activation.ONPLAY){
-                        arrAc[i].CardAction(cmang.board, x, y);
+                        arrAc[i].CardAction(cmang, x, y);
                     }
                 }
                 //Disable stacking

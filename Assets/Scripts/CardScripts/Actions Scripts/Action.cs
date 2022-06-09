@@ -32,7 +32,7 @@ public abstract class Action : ScriptableObject
 
 
 
-  public abstract void CardAction(Card[,] board, int x, int y);
+  public abstract void CardAction(CardGameManager cmang, int x, int y);
   
 
 

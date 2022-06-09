@@ -30,7 +30,7 @@ public void Animation(Card[,] board, int x, int y, ReferenceGridObjects refGrid)
 }
     }
 
-public abstract void CardAction(Card[,] board, bool[,] arrTargets, ReferenceGridObjects refGrid);
+public abstract void CardAction(CardGameManager cmang, bool[,] arrTargets, ReferenceGridObjects refGrid);
 
 public bool[,] TargetSpaces(Card[,] board){
     

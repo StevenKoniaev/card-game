@@ -13,16 +13,16 @@ public class EnemyAttackAction : EnemyActions
     }
     
 
-    public override void CardAction(Card[,] board, bool[,] arrTargets, ReferenceGridObjects refGrid){
+    public override void CardAction(CardGameManager cmang, bool[,] arrTargets, ReferenceGridObjects refGrid){
     for (int i =0; i < arrTargets.GetLength(0); i++){
         for (int j = 0; j < arrTargets.GetLength(1); j++){
             if (arrTargets[i,j] == true){
-                if (board[i,j] != null){
-                            Animation(board, i, j);
-                            cmang.CardTakeDamage(board[i,j], valueForEffect, cmang, i, j);
+                if (cmang.board[i,j] != null){
+                            Animation(cmang.board, i, j);
+                            cmang.CardTakeDamage(cmang.board[i,j], valueForEffect, cmang, i, j);
                         }
-                        if(board[i,j] == null){
-                            Animation(board,i,j,refGrid);
+                        if(cmang.board[i,j] == null){
+                            Animation(cmang.board,i,j,refGrid);
                             HealthSystem.Damage(valueForEffect);
                         }
             }

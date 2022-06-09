@@ -126,7 +126,7 @@ public class BattleSystem : MonoBehaviour
                     for (int k = 0; k < ((FriendlyCard)cmang.board[i,j]).cActions.Length; k++ ){
                         //Go through array of possible actions and use them
                         if ( ((FriendlyCard)cmang.board[i,j]).cActions[k].activation == Action.Activation.ONENDTURN){
-                            ((FriendlyCard)cmang.board[i,j]).cActions[k].CardAction(cmang.board, i, j);
+                            ((FriendlyCard)cmang.board[i,j]).cActions[k].CardAction(cmang, i, j);
                         }
                     }
                 }
@@ -160,7 +160,7 @@ public class BattleSystem : MonoBehaviour
        playerHud.StopTextTurnText();
        //Do the enemies chosen action
        //TODO dynamic enemy sizes
-        chosenEnemyAction.CardAction(cmang.board, arrTarget, refGrid);
+        chosenEnemyAction.CardAction(cmang, arrTarget, refGrid);
         //See if health has changed since attack
         hpbar.StartReduceHealth();
          //  chosenAction.CardAction(cmang.board, 1, 3);

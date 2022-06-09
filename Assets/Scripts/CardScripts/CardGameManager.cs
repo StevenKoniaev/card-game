@@ -49,7 +49,7 @@ public class CardGameManager : MonoBehaviour
                 for (int i = 0; i < (((FriendlyCard)card).cActions.Length); i++)
                     {
                         if (((FriendlyCard)card).cActions[i].activation == Action.Activation.ONDEATH){
-                            ((FriendlyCard)card).cActions[i].CardAction(board, x , y);
+                            ((FriendlyCard)card).cActions[i].CardAction(cmang, x , y);
                         }
                     }
             }

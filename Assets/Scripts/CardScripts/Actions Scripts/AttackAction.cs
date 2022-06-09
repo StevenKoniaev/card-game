@@ -11,7 +11,7 @@ public class AttackAction : Action
    
 
    
-    public override void CardAction(Card[,] board, int x, int y){
+    public override void CardAction(CardGameManager cmang, int x, int y){
         //Deal damage to a unit based on the direction
         //TODO switch the directon be an enum or something ~ 
         //Doing now! Is there a better way to do this? Think about it.\
@@ -21,10 +21,10 @@ public class AttackAction : Action
             
             case Direction.UP:
             {
-                if (x+1 < board.GetLength(0)){
-                    if (board[x+1, y] != null){
-                        Animation(board, x+1, y);
-                        cmang.CardTakeDamage(board[x+1,y], damage, cmang, x+1, y);
+                if (x+1 < cmang.board.GetLength(0)){
+                    if (cmang.board[x+1, y] != null){
+                        Animation(cmang.board, x+1, y);
+                        cmang.CardTakeDamage(cmang.board[x+1,y], damage, cmang, x+1, y);
                     }
                 }
                 break;
@@ -33,9 +33,9 @@ public class AttackAction : Action
             case Direction.DOWN:
             {
                 if (x-1 >= 0){
-                    if (board[x-1, y] != null){
-                        Animation(board, x-1, y);
-                        cmang.CardTakeDamage(board[x-1,y], damage, cmang, x+1, y);
+                    if (cmang.board[x-1, y] != null){
+                        Animation(cmang.board, x-1, y);
+                        cmang.CardTakeDamage(cmang.board[x-1,y], damage, cmang, x+1, y);
                       
                     }
                 }
@@ -43,9 +43,9 @@ public class AttackAction : Action
             }
             case Direction.LEFT:{
                 if (y-1 >= 0){
-                    if (board[x, y-1] != null){
-                        Animation(board, x, y-1);
-                        cmang.CardTakeDamage(board[x,y-1], damage, cmang, x, y-1);
+                    if (cmang.board[x, y-1] != null){
+                        Animation(cmang.board, x, y-1);
+                        cmang.CardTakeDamage(cmang.board[x,y-1], damage, cmang, x, y-1);
                        
                     }
                 }
@@ -53,10 +53,10 @@ public class AttackAction : Action
             }
             case Direction.RIGHT:
             {
-                  if (y+1 < board.GetLength(1)){
-                    if (board[x, y+1] != null){
-                        Animation(board, x, y+1);
-                        cmang.CardTakeDamage(board[x,y+1], damage, cmang, x, y+1);
+                  if (y+1 < cmang.board.GetLength(1)){
+                    if (cmang.board[x, y+1] != null){
+                        Animation(cmang.board, x, y+1);
+                        cmang.CardTakeDamage(cmang.board[x,y+1], damage, cmang, x, y+1);
                        
                     }
                 }
