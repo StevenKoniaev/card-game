@@ -7,17 +7,8 @@ public class PlayerHUD : MonoBehaviour
 {
     
     public TextMeshProUGUI manaText;
-    public TextMeshProUGUI healthText;
     public GameObject turnTextObject;
     public TextMeshProUGUI turnTextText;
-
-    public void Start(){
-        
-    }
-
-    public void SetPlayerHealth(int hp){
-        healthText.text = hp.ToString();
-    }
 
     public void SetPlayerMana(int mana){
         manaText.text = mana.ToString();

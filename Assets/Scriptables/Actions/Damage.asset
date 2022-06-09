@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f62924e89b37943b8c358da668f137, type: 3}
   m_Name: Damage
   m_EditorClassIdentifier: 
+  activation: 0
   descriptionText: Deal 3 damage!
   attackPrefab: {fileID: 5274385716400405822, guid: 2b13a6a99674dfe49975fb62cbd3774e, type: 3}
   direction: 3
+  cmang: {fileID: 0}
   damage: 3

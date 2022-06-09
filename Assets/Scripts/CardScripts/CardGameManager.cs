@@ -35,13 +35,42 @@ public class CardGameManager : MonoBehaviour
                     return;
                 }
             }
+
+    
+    public void CardTakeDamage(Card card, int dmg, CardGameManager cmang, int x, int y){
         
+        card.health -= dmg;
+        card.myDisplay.CardUpdate(card);
+        if (card.health > 0){
+            card.myDisplay.animator.SetTrigger("takeDamage");
+        } else {
+            card.myDisplay.GetComponent<TriggerDestructionPrefab>().BeginDestruction();
+            if (card.GetType() == typeof(FriendlyCard)){
+                for (int i = 0; i < (((FriendlyCard)card).cActions.Length); i++)
+                    {
+                        if (((FriendlyCard)card).cActions[i].activation == Action.Activation.ONDEATH){
+                            ((FriendlyCard)card).cActions[i].CardAction(board, x , y);
+                        }
+                    }
+            }
+            Debug.Log(cmang.board[x,y].name);
+            cmang.graveyard.Add(cmang.board[x,y]);
+            
+            cmang.board[x,y] = null;
+
+            Debug.Log(cmang.graveyard[0].name); 
+            Destroy(card.myDisplay.transform.gameObject);
+        }
+    }
     
-
-
-    
-    public void EndCombat(){
-
+    public void DisplayGraveyard(CardGameManager cmang){
+     
+        Debug.Log("Graveyard:");
+        for (int i = 0; i < cmang.graveyard.Count; i++)
+        {
+            Debug.Log(cmang.graveyard[i].name);
+        }
+      
     }
 
     

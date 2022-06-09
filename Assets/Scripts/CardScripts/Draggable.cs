@@ -8,7 +8,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     //The parent to return to ref for where the card should jump back to
     public Transform parentToReturnTo = null;
     GameObject placeHolder = null;
-  
     CanvasGroup canvasgroupref=null;
     public bool canDrag = true;
 
@@ -51,11 +50,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
 
        public void OnEndDrag(PointerEventData eventData){
+
+           Debug.Log("END DRAG");
            if (canDrag != false){
             this.transform.SetParent(parentToReturnTo);
             this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
            canvasgroupref.blocksRaycasts = true;
            Destroy(placeHolder);
+           
+           
+
            if (this.GetComponentInParent<DropCard>().x != -1){
                 canDrag = false;
            }

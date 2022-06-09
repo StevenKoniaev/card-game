@@ -19,7 +19,7 @@ public class BattleSystem : MonoBehaviour
     public Transform enemyArea;
     public GameObject isTarget; 
     List<GameObject> gridTargets = new List<GameObject>();
-    Action chosenEnemyAction;
+    EnemyActions chosenEnemyAction;
      ReferenceGridObjects refGrid;
      public HealthbarHandler hpbar;
 
@@ -77,6 +77,7 @@ public class BattleSystem : MonoBehaviour
         cmang.DrawCard();
         cmang.DrawCard();
         cmang.DrawCard();
+        cmang.DrawCard();
 
        
        
@@ -86,13 +87,13 @@ public class BattleSystem : MonoBehaviour
        playerHud.StopTextTurnText();
 
        //Which cells is the enemy targetting? What attack will it be with?
-       chosenEnemyAction = pHolderenemy[0].cActions[Random.Range(0, pHolderenemy[0].cActions.Length)];
+       chosenEnemyAction = pHolderenemy[0].enemyActions[Random.Range(0, pHolderenemy[0].enemyActions.Count)];
        pHolderenemy[0].myDisplay.transform.gameObject.GetComponent<EffectDisplay>().SetEffectInfo(chosenEnemyAction);
        //2D arr of bool
         arrTarget  = chosenEnemyAction.TargetSpaces(cmang.board);
         //GUI Markers for where the enemy effect will go
        for (int i = 0; i < arrTarget.GetLength(0); i++){
-           for (int j = 0; j < arrTarget.GetLength(0); j++){
+           for (int j = 0; j < arrTarget.GetLength(1); j++){
                if (arrTarget[i,j] == true){
                   
                    GameObject myTarget = Instantiate(isTarget, new Vector3(0,0,0), Quaternion.identity);
@@ -115,17 +116,18 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(AttackPhase());
     }
 
+
+
     IEnumerator AttackPhase(){
    //Minion attaccks! and effects!~
         for (int i = 0; i < 3; i++){
             for (int j = 0 ; j < 3; j++){
                 if (cmang.board[i,j] != null){
-                    for (int k = 0; k < cmang.board[i,j].cActions.Length; k++ ){
+                    for (int k = 0; k < ((FriendlyCard)cmang.board[i,j]).cActions.Length; k++ ){
                         //Go through array of possible actions and use them
-                        if (cmang.board[i,j].cActions[k].activation == Action.Activation.ONENDTURN){
-                            cmang.board[i,j].cActions[k].CardAction(cmang.board, i, j);
+                        if ( ((FriendlyCard)cmang.board[i,j]).cActions[k].activation == Action.Activation.ONENDTURN){
+                            ((FriendlyCard)cmang.board[i,j]).cActions[k].CardAction(cmang.board, i, j);
                         }
-                        
                     }
                 }
             }
@@ -144,12 +146,12 @@ public class BattleSystem : MonoBehaviour
             EndBattle();
         } else if (state == BattleState.ENEMYTURN){
             StartCoroutine(EnemyTurn());
-        }
-        
-            
+        }   
         yield return new WaitForSecondsRealtime(0f);
          StopCoroutine(AttackPhase());
     }
+
+
 
     public IEnumerator EnemyTurn(){
         //Display message

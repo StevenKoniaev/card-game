@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (fileName = "New Action", menuName = "Actions/EnemyAttack")]
-public class EnemyAttackAction : Action
+[CreateAssetMenu (fileName = "New Enemy Action", menuName = "EnemyActions/EnemyAttack")]
+public class EnemyAttackAction : EnemyActions
 {
     //[SerializeField]
     //private int damage = 3;
@@ -11,7 +11,7 @@ public class EnemyAttackAction : Action
     public void ActionDisplay(){
 
     }
-    public override void CardAction(Card[,] board, int x, int y){}
+    
 
     public override void CardAction(Card[,] board, bool[,] arrTargets, ReferenceGridObjects refGrid){
     for (int i =0; i < arrTargets.GetLength(0); i++){
@@ -19,7 +19,7 @@ public class EnemyAttackAction : Action
             if (arrTargets[i,j] == true){
                 if (board[i,j] != null){
                             Animation(board, i, j);
-                            board[i,j].TakeDamage(valueForEffect, board, i, j);
+                            cmang.CardTakeDamage(board[i,j], valueForEffect, cmang, i, j);
                         }
                         if(board[i,j] == null){
                             Animation(board,i,j,refGrid);

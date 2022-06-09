@@ -11,15 +11,15 @@ public class EffectDisplay : MonoBehaviour
     public Sprite imageEffectAttackOption;
     public Sprite imageEffectSpellOption;
 
-    public void SetEffectInfo(Action action){
+    public void SetEffectInfo(EnemyActions action){
        
              numberEffect.text = action.valueForEffect.ToString();
         
        
 
-        if (action.myType == Action.Type.ATTACK){
+        if (action.myType == EnemyActions.Type.ATTACK){
             imageEffectCHOICE.sprite = imageEffectAttackOption;
-        } else if (action.myType == Action.Type.EFFECT){
+        } else if (action.myType == EnemyActions.Type.EFFECT){
             imageEffectCHOICE.sprite = imageEffectSpellOption;
             }else{
             imageEffectCHOICE.sprite = null;

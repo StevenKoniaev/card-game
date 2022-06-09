@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc6bcb170653c34eb15201c20903288, type: 3}
   m_Name: Demon
   m_EditorClassIdentifier: 
-  cType: 1
   name: Demon
   artwork: {fileID: -2054164056, guid: a41a606ac56d9494ab88f9639b3bec19, type: 3}
-  cost: 0
   myDisplay: {fileID: 0}
-  health: -1
+  health: 5
   healthMax: 5
   animatorcontroller: {fileID: 9100000, guid: 5996c4eb058a4444288ac730752f78a0, type: 2}
-  cActions:
+  enemyActions:
   - {fileID: 11400000, guid: 5eea0defce406e742b263a3d294d6a34, type: 2}
-  description: Mwwahhahaha!
+  dialogue: 

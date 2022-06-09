@@ -24,7 +24,7 @@ public void Start(){
      Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
    
       if (d!=null && this.x != -1 && d.canDrag == true){
-        int cardCost = d.GetComponent<CardDisplay>().card.cost;
+        int cardCost = ((FriendlyCard)d.GetComponent<CardDisplay>().card).cost;
           if (cmang.mana >=  cardCost){
               cmang.mana -= cardCost;
               playerHud.SetPlayerMana(cmang.mana);
@@ -33,7 +33,15 @@ public void Start(){
                 
                 eventData.pointerDrag.transform.localScale = new Vector3(0.9f,0.9f,1);
                 cmang.board[x,y] = eventData.pointerDrag.GetComponent<CardDisplay>().card;
-               
+                //On plan effect
+                Action[] arrAc = ((FriendlyCard)d.GetComponent<CardDisplay>().card).cActions;
+                for (var i = 0; i < arrAc.Length; i++)
+                {
+                    if (arrAc[i].activation == Action.Activation.ONPLAY){
+                        arrAc[i].CardAction(cmang.board, x, y);
+                    }
+                }
+                //Disable stacking
                 this.enabled = false;
         
       }

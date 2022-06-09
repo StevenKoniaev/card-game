@@ -35,7 +35,7 @@ public class CardDisplay : MonoBehaviour
         }
           
         if (costText != null){
-          costText.text = myCard.cost.ToString();
+          costText.text = ((FriendlyCard)myCard).cost.ToString();
         }
           
         if (animator != null && myCard.animatorcontroller != null){
@@ -50,14 +50,14 @@ public class CardDisplay : MonoBehaviour
         this.card.myDisplay = this;
 
         if (effectText != null){
-          for (int i =0; i < myCard.cActions.Length; i++){
+          for (int i =0; i < ((FriendlyCard)myCard).cActions.Length; i++){
             
-          effectText.text += myCard.cActions[i].descriptionText + "\n";
+          effectText.text += ((FriendlyCard)myCard).cActions[i].descriptionText + "\n";
         }
 
-        if (myCard.cActions.Length > 0 && effectText != null){
+        if (((FriendlyCard)myCard).cActions.Length > 0){
 
-          switch (myCard.cActions[0].direction) {
+          switch (((FriendlyCard)myCard).cActions[0].direction) {
             case Action.Direction.RIGHT: {
               directionImg.transform.Rotate(new Vector3(0,0,0));
               break;
@@ -78,13 +78,9 @@ public class CardDisplay : MonoBehaviour
             default:{
              
             }break;
-          }
-          
+          } 
         }
-           
-        
-        }
-        
+      }  
     }
 
     public void CardUpdate(Card myCard){

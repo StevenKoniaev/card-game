@@ -7,12 +7,9 @@ public class Enemy : Card
 {
 
 
+public List<EnemyActions> enemyActions = new List<EnemyActions>();
+public string dialogue;
 
-public string description;
-
-//public override void TakeDamage(int dmg){
-   
-//}
 
 
 }

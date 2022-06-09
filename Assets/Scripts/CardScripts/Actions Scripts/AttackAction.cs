@@ -16,10 +16,6 @@ public class AttackAction : Action
         //TODO switch the directon be an enum or something ~ 
         //Doing now! Is there a better way to do this? Think about it.\
         //Switch statment + enum is so clean
-      
-
-     
-
         switch (direction){
             //Check direction of attack action!
             
@@ -28,7 +24,7 @@ public class AttackAction : Action
                 if (x+1 < board.GetLength(0)){
                     if (board[x+1, y] != null){
                         Animation(board, x+1, y);
-                        board[x+1, y].TakeDamage(damage, board, x+1, y);
+                        cmang.CardTakeDamage(board[x+1,y], damage, cmang, x+1, y);
                     }
                 }
                 break;
@@ -39,7 +35,7 @@ public class AttackAction : Action
                 if (x-1 >= 0){
                     if (board[x-1, y] != null){
                         Animation(board, x-1, y);
-                        board[x-1, y].TakeDamage(damage, board, x-1, y);
+                        cmang.CardTakeDamage(board[x-1,y], damage, cmang, x+1, y);
                       
                     }
                 }
@@ -49,7 +45,7 @@ public class AttackAction : Action
                 if (y-1 >= 0){
                     if (board[x, y-1] != null){
                         Animation(board, x, y-1);
-                        board[x, y-1].TakeDamage(damage, board, x, y-1);
+                        cmang.CardTakeDamage(board[x,y-1], damage, cmang, x, y-1);
                        
                     }
                 }
@@ -60,35 +56,10 @@ public class AttackAction : Action
                   if (y+1 < board.GetLength(1)){
                     if (board[x, y+1] != null){
                         Animation(board, x, y+1);
-                        board[x, y+1].TakeDamage(damage, board, x, y+1);
+                        cmang.CardTakeDamage(board[x,y+1], damage, cmang, x, y+1);
                        
                     }
                 }
-                break;
-            }
-
-            case Direction.ALL:
-            {
-                for (int i=0; i < board.GetLength(0); i++){
-                    for (int j=0; j < board.GetLength(1)-1; j++){
-                        if (board[i,j] != null){
-                            Animation(board, i, j);
-                            board[i,j].TakeDamage(damage, board, i, j);
-                        }
-
-                        if(board[i,j] == null){
-                            HealthSystem.Damage(damage);
-                        }
-                       
-                    }
-                }
-                break;
-            }
-
-            case Direction.COLUMNRIGHT:{
-                break;
-            }
-            case Direction.RANDOM5:{
                 break;
             }
             default:{} break;
