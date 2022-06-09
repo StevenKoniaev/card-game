@@ -43,6 +43,15 @@ public class CardGameManager : MonoBehaviour
         card.myDisplay.CardUpdate(card);
         if (card.health > 0){
             card.myDisplay.animator.SetTrigger("takeDamage");
+
+              for (int i = 0; i < (((FriendlyCard)card).cActions.Length); i++)
+                    {
+                        if (((FriendlyCard)card).cActions[i].activation == Action.Activation.ONHIT){
+                            ((FriendlyCard)card).cActions[i].CardAction(cmang, x , y);
+                        }
+                    }
+        
+
         } else {
             card.myDisplay.GetComponent<TriggerDestructionPrefab>().BeginDestruction();
             if (card.GetType() == typeof(FriendlyCard)){
@@ -52,13 +61,14 @@ public class CardGameManager : MonoBehaviour
                             ((FriendlyCard)card).cActions[i].CardAction(cmang, x , y);
                         }
                     }
+                cmang.graveyard.Add(cmang.board[x,y]);
             }
-            Debug.Log(cmang.board[x,y].name);
-            cmang.graveyard.Add(cmang.board[x,y]);
+
+            
             
             cmang.board[x,y] = null;
 
-            Debug.Log(cmang.graveyard[0].name); 
+
             Destroy(card.myDisplay.transform.gameObject);
         }
     }

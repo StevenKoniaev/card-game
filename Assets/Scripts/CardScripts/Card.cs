@@ -14,7 +14,7 @@ public Sprite artwork;
 public CardDisplay myDisplay = null;
 public int health;
 public int healthMax;
-public RuntimeAnimatorController animatorcontroller;
+
 
 
 

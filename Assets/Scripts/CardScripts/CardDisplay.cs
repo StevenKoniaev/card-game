@@ -38,8 +38,8 @@ public class CardDisplay : MonoBehaviour
           costText.text = ((FriendlyCard)myCard).cost.ToString();
         }
           
-        if (animator != null && myCard.animatorcontroller != null){
-          animator.runtimeAnimatorController = myCard.animatorcontroller;
+        if (card.GetType() == typeof(Enemy)){
+          animator.runtimeAnimatorController = ((Enemy)myCard).animatorcontroller;
         }
         
         artwork.sprite = myCard.artwork;
